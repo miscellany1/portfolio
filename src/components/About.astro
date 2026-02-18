@@ -1,0 +1,41 @@
+---
+import SectionReveal from "./SectionReveal.tsx";
+---
+
+<section id="about" class="py-20">
+  <div class="max-w-5xl mx-auto px-4 sm:px-6">
+    <SectionReveal client:visible>
+      <h2 class="text-2xl sm:text-3xl font-bold text-slate-100 mb-8">About</h2>
+      <div
+        class="bg-slate-900 border border-slate-800 rounded-xl p-6 sm:p-8 hover:border-slate-700 transition-colors"
+      >
+        <div class="flex flex-col items-center sm:flex-row sm:items-start gap-6">
+          <!-- To use a headshot, replace this div with: <img src="/your-photo.jpg" alt="Logan Sheetz" class="w-24 h-24 rounded-full object-cover border-2 border-green-400 shrink-0" /> -->
+          <div class="w-24 h-24 rounded-full bg-slate-800 border-2 border-green-400 flex items-center justify-center shrink-0">
+            <span class="text-2xl font-bold text-green-400">LS</span>
+          </div>
+          <div>
+            <p class="text-slate-300 leading-relaxed mb-4">
+              I design and build interactive learning experiences that drive
+              measurable outcomes. My work focuses on scenario-based learning,
+              meaningful feedback loops, and learner-centered evaluation — combining
+              instructional design expertise with hands-on development skills.
+            </p>
+            <p class="text-slate-300 leading-relaxed mb-4">
+              Every project I create is grounded in evidence-based practice: clear
+              learning objectives, authentic assessments, and iterative design. I
+              bring ideas to life as fully functional prototypes — not just
+              wireframes — so stakeholders can experience the learning before it
+              ships.
+            </p>
+            <p class="text-slate-400 leading-relaxed">
+              Tools I work with include React, TypeScript, Astro, and modern web
+              frameworks — applied in service of learning, not technology for its own
+              sake.
+            </p>
+          </div>
+        </div>
+      </div>
+    </SectionReveal>
+  </div>
+</section>

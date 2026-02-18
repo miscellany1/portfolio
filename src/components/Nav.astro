@@ -1,0 +1,34 @@
+---
+const links = [
+  { href: "#projects", label: "Projects" },
+  { href: "#about", label: "About" },
+  { href: "#contact", label: "Contact" },
+];
+---
+
+<header
+  class="border-b border-slate-800 bg-slate-950/80 backdrop-blur-sm sticky top-0 z-50"
+>
+  <div
+    class="max-w-5xl mx-auto px-4 sm:px-6 h-14 flex items-center justify-between"
+  >
+    <a
+      href="#"
+      class="text-lg font-semibold text-slate-100 hover:text-white transition-colors"
+    >
+      Liam Sheehan
+    </a>
+    <nav class="flex items-center gap-6 text-sm">
+      {
+        links.map((link) => (
+          <a
+            href={link.href}
+            class="text-slate-400 hover:text-slate-200 transition-colors"
+          >
+            {link.label}
+          </a>
+        ))
+      }
+    </nav>
+  </div>
+</header>

@@ -1,0 +1,25 @@
+---
+import ProjectCard from "./ProjectCard.tsx";
+import SectionReveal from "./SectionReveal.tsx";
+import { projects } from "../data/projects";
+---
+
+<section id="projects" class="py-20">
+  <div class="max-w-5xl mx-auto px-4 sm:px-6">
+    <SectionReveal client:visible>
+      <h2 class="text-2xl sm:text-3xl font-bold text-slate-100 mb-2">
+        Projects
+      </h2>
+      <p class="text-slate-400 mb-10">
+        Interactive prototypes that demonstrate instructional design in action.
+      </p>
+    </SectionReveal>
+    <div class="grid gap-6 sm:grid-cols-2">
+      {
+        projects.map((project, i) => (
+          <ProjectCard client:visible project={project} index={i} />
+        ))
+      }
+    </div>
+  </div>
+</section>

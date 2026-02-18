@@ -1,0 +1,35 @@
+---
+import SectionReveal from "./SectionReveal.tsx";
+---
+
+<section id="contact" class="py-20">
+  <div class="max-w-5xl mx-auto px-4 sm:px-6">
+    <SectionReveal client:visible>
+      <h2 class="text-2xl sm:text-3xl font-bold text-slate-100 mb-2">
+        Get in Touch
+      </h2>
+      <p class="text-slate-400 mb-8">
+        Interested in working together? I'd love to hear from you.
+      </p>
+      <a
+        href="mailto:hello@liamsheehan.dev"
+        class="inline-flex items-center gap-3 px-6 py-3 bg-green-600 hover:bg-green-700 text-white font-medium rounded-lg transition-colors"
+      >
+        <svg
+          class="w-5 h-5"
+          fill="none"
+          viewBox="0 0 24 24"
+          stroke="currentColor"
+          stroke-width="1.5"
+        >
+          <path
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"
+          ></path>
+        </svg>
+        Send Me an Email
+      </a>
+    </SectionReveal>
+  </div>
+</section>
