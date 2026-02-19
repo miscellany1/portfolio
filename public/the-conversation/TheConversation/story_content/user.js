@@ -25,15 +25,13 @@ var dp2 = player.GetVar("dp2_choice");
 var dp3 = player.GetVar("dp3_choice");
 var dp4 = player.GetVar("dp4_choice");
 
-window.open(
+window.location.href =
   "https://liamksheehan.com/the-conversation/results" +
   "?score=" + score +
   "&dp1=" + dp1 +
   "&dp2=" + dp2 +
   "&dp3=" + dp3 +
-  "&dp4=" + dp4,
-  "_blank"
-);
+  "&dp4=" + dp4;
 }
 
 };

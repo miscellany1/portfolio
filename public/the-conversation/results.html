@@ -229,7 +229,7 @@ body::before{
 /* ── footer ── */
 .footer{margin-top:2rem}
 
-.try-again-wrap{text-align:center;margin-bottom:2rem}
+.try-again-wrap{display:flex;justify-content:center;align-items:center;gap:1rem;flex-wrap:wrap;margin-bottom:2rem}
 .btn-try-again{
   display:inline-flex;align-items:center;gap:.5rem;
   font-family:var(--font-body);
@@ -250,6 +250,24 @@ body::before{
 }
 .btn-try-again:active{transform:translateY(0)}
 .btn-try-again svg{width:16px;height:16px;fill:currentColor}
+.btn-portfolio{
+  display:inline-flex;align-items:center;gap:.5rem;
+  font-family:var(--font-body);
+  font-size:.95rem;font-weight:600;
+  color:var(--accent);
+  background:transparent;
+  border:2px solid var(--accent);border-radius:8px;
+  padding:.6rem 1.8rem;
+  cursor:pointer;
+  text-decoration:none;
+  transition:background .2s,transform .15s,box-shadow .2s,color .2s;
+}
+.btn-portfolio:hover{
+  background:var(--accent);color:#0d1b2e;
+  transform:translateY(-1px);
+  box-shadow:0 4px 20px rgba(217,119,6,.35);
+}
+.btn-portfolio:active{transform:translateY(0)}
 
 /* ── SBI+I callout ── */
 .sbi-card{
@@ -476,6 +494,9 @@ body::before{
         <a href="/the-conversation/TheConversation/story.html" class="btn-try-again">
           <svg viewBox="0 0 16 16"><path d="M11.534 7h3.932a.25.25 0 0 1 .192.41l-1.966 2.36a.25.25 0 0 1-.384 0l-1.966-2.36a.25.25 0 0 1 .192-.41m-11 2h3.932a.25.25 0 0 0 .192-.41L2.692 6.23a.25.25 0 0 0-.384 0L.342 8.59A.25.25 0 0 0 .534 9"/><path fill-rule="evenodd" d="M8 3a5 5 0 1 0 4.546 2.914.5.5 0 1 1 .908-.418A6 6 0 1 1 8 2z"/><path fill-rule="evenodd" d="M8 13A5 5 0 1 0 3.454 10.086a.5.5 0 0 1-.908.418A6 6 0 1 1 8 14z"/></svg>
           Try Again
+        </a>
+        <a href="https://liamksheehan.com" class="btn-portfolio">
+          Back to Portfolio
         </a>
       </div>
 
