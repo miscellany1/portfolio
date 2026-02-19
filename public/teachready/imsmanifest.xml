@@ -1,0 +1,116 @@
+<?xml version="1.0" ?>
+<manifest identifier="lSe3aEAQLNES-pWXWJd07CBg1J3XeV1y2jjwBwWn" version="1"
+  xmlns="http://www.imsproject.org/xsd/imscp_rootv1p1p2"
+  xmlns:adlcp="http://www.adlnet.org/xsd/adlcp_rootv1p2"
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:schemaLocation="http://www.imsproject.org/xsd/imscp_rootv1p1p2 imscp_rootv1p1p2.xsd
+                      http://www.adlnet.org/xsd/adlcp_rootv1p2 adlcp_rootv1p2.xsd">
+  <metadata>
+    <schema>ADL SCORM</schema>
+    <schemaversion>1.2</schemaversion>
+    <adlcp:location>metadata.xml</adlcp:location> 
+  </metadata>
+  <organizations default="articulate_rise">
+      <organization identifier="articulate_rise">
+      <title>Best Practices for Teaching Online</title>
+      <item identifier="i1" identifierref="r1" isvisible="true">
+        <title>Best Practices for Teaching Online</title>
+        <adlcp:datafromlms>eyJjcHYiOiIyamp3QndXbiIsInJsZCI6ZmFsc2V9</adlcp:datafromlms>
+      </item>
+    </organization>
+  </organizations>
+  <resources>
+    <resource identifier="r1" type="webcontent" adlcp:scormtype="sco" href="scormdriver/indexAPI.html">
+      <!-- SCORMDRIVER STUFF -->
+      <file href="scormdriver/indexAPI.html" />
+      <file href="scormdriver/preloadIntegrity.js" />
+      <file href="scormdriver/driverOptions.js" />
+      <file href="scormdriver/AICCComm.html" />
+      <file href="scormdriver/auto-scripts/AutoBookmark.js" />
+      <file href="scormdriver/auto-scripts/AutoCompleteSCO.js" />
+      <file href="scormdriver/auto-scripts/CourseExit.js" />
+      <file href="scormdriver/blank.html" />
+      <file href="scormdriver/goodbye.html" />
+      <file href="scormdriver/scormdriver.js" />
+      <file href="scormdriver/browsersniff.js" />
+
+      <!-- RUNTIME COMMON STUFF -->
+      <file href="scormcontent/index.html" />
+
+      
+        <file href="scormcontent/lib/fonts/icomoon.ttf"/>
+        <file href="scormcontent/lib/fonts/icomoon.woff"/>
+
+        <file href="scormcontent/lib/icomoon.css"/>
+        <file href="scormcontent/lib/lzwcompress.js"/>
+      
+
+      <!-- FRONTEND BUNDLE ASSETS -->
+      <file href="scormcontent/lib/rise/87c95945.js" />
+<file href="scormcontent/lib/rise/56803e6d.css" />
+<file href="scormcontent/lib/rise/b4e99252.js" />
+<file href="scormcontent/lib/rise/d66fb37c.css" />
+<file href="scormcontent/lib/rise/e005c43d.js" />
+<file href="scormcontent/lib/rise/b0c74692.js" />
+<file href="scormcontent/lib/rise/8c0b49f4.js" />
+<file href="scormcontent/lib/rise/e29d46b6.js" />
+<file href="scormcontent/lib/rise/db85f2af.js" />
+<file href="scormcontent/lib/rise/4143ff81.js" />
+<file href="scormcontent/lib/rise/7967103f.js" />
+<file href="scormcontent/lib/rise/df30b989.js" />
+<file href="scormcontent/lib/rise/30563ed1.js" />
+<file href="scormcontent/lib/rise/466ab4a9.js" />
+<file href="scormcontent/lib/rise/0bcec83e.js" />
+<file href="scormcontent/lib/rise/7e615df9.js" />
+<file href="scormcontent/lib/rise/3d69be23.js" />
+<file href="scormcontent/lib/rise/7c2963ab.js" />
+<file href="scormcontent/lib/learn_dist/entry.js" />
+<file href="scormcontent/lib/learn_dist/5515a099.js" />
+<file href="scormcontent/lib/learn_dist/e06aa5e6.css" />
+<file href="scormcontent/lib/learn_dist/7acdcaff.js" />
+<file href="scormcontent/lib/mondrian/entry.js" />
+<file href="scormcontent/lib/mondrian/ad3a3b3a.js" />
+<file href="scormcontent/lib/mondrian/b2ff0c79.js" />
+<file href="scormcontent/lib/mondrian/566fbc16.js" />
+<file href="scormcontent/lib/mondrian/09e37aee.js" />
+<file href="scormcontent/lib/mondrian/196251cf.js" />
+<file href="scormcontent/lib/sandbox/sandbox.html" />
+<file href="scormcontent/lib/sandbox/c77685df.js" />
+<file href="scormcontent/lib/sandbox/4adfab46.css" />
+
+
+      <!-- RUNTIME CONTENT STUFF -->
+      <file href="scormcontent/lib/fonts/Poppins-BoldItalic.woff" />
+<file href="scormcontent/lib/fonts/Poppins-Bold.woff" />
+<file href="scormcontent/lib/fonts/Poppins-SemiBoldItalic.woff" />
+<file href="scormcontent/lib/fonts/Poppins-SemiBold.woff" />
+<file href="scormcontent/lib/fonts/Poppins-Italic.woff" />
+<file href="scormcontent/lib/fonts/Poppins-Regular.woff" />
+<file href="scormcontent/lib/fonts/Lato2-Regular.woff" />
+<file href="scormcontent/lib/fonts/Lato2-Light.woff" />
+<file href="scormcontent/lib/fonts/Lato2-Italic.woff" />
+<file href="scormcontent/lib/fonts/Lato2-Bold.woff" />
+<file href="scormcontent/lib/fonts/Lato2-Black.woff" />
+<file href="scormcontent/assets/small.png" />
+<file href="scormcontent/assets/Outlook-Emblem.png" />
+<file href="scormcontent/assets/announcements%20notificati.png" />
+<file href="scormcontent/assets/IFgsQU/Instructure_Canvas_Logo.png" />
+<file href="scormcontent/assets/kaltura%20embed.png" />
+<file href="scormcontent/assets/Ally-Course-Accessibility-.jpg" />
+<file href="scormcontent/assets/09leLC/Instructure_Canvas_Logo.png" />
+<file href="scormcontent/assets/L2whrW_KXbdREi33_350_full.png" />
+<file href="scormcontent/assets/x7DXi_zqnb-un5MD_321_full.png" />
+<file href="scormcontent/assets/w-2E5roansRMELuz_332_full.png" />
+<file href="scormcontent/assets/DsgMqORHTIOMb16Z_335_full.png" />
+<file href="scormcontent/assets/0OT77Oeoag7UnMWJ_326_full.png" />
+<file href="scormcontent/assets/Eb1B9aWgFUOeWVbC_328_full.png" />
+<file href="scormcontent/assets/Xex4rbYZ0zx81_0B_343_full.png" />
+<file href="scormcontent/assets/CqI8bM3NsOFA6ZZ1_337_full.png" />
+<file href="scormcontent/assets/BbHVL9wDBQwbFKCk_346_full.png" />
+<file href="scormcontent/assets/M5wgHrMAlUly_73V_323_full.png" />
+<file href="scormcontent/assets/ALKxeRDMfgAU0K-Y_325_full.png" />
+<file href="scormcontent/assets/L8a22GGb3UJlIcmp_340_full.png" />
+
+    </resource>
+  </resources>
+</manifest>

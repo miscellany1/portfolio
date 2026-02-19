@@ -1,4 +1,8 @@
-node_modules/
-dist/
+# Dependencies (match nested too)
+**/node_modules/
+
+# Astro build output (top-level only)
+/dist/
 .astro/
+
 .DS_Store
