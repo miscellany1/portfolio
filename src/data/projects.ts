@@ -38,7 +38,7 @@ export const projects: Project[] = [
       "Risk awareness training",
     ],
     tech: ["React", "TypeScript", "Tailwind CSS", "Framer Motion"],
-    demoUrl: "#",
+    demoUrl: "/cyberwise/dist/index.html",
   },
   {
     title: "MindMaze",
@@ -52,7 +52,7 @@ export const projects: Project[] = [
       "Engagement design",
     ],
     tech: ["Twine", "HTML", "CSS"],
-    demoUrl: "#",
+    demoUrl: "/mindmaze.html",
     linkLabel: "Play Game",
   },
   {
@@ -67,7 +67,7 @@ export const projects: Project[] = [
       "Standards alignment",
     ],
     tech: ["React", "TypeScript", "Tailwind CSS", "Framer Motion"],
-    demoUrl: "#",
+    demoUrl: "/course-eval/dist/index.html",
   },
   {
     title: "TeachReady",
@@ -81,6 +81,6 @@ export const projects: Project[] = [
       "Rapid authoring",
     ],
     tech: ["Articulate Rise"],
-    demoUrl: "#",
+    demoUrl: "/teachready/scormcontent/index.html",
   },
 ];
