@@ -6,7 +6,7 @@ import { ResultsPage } from "./pages/ResultsPage";
 
 function App() {
   return (
-    <BrowserRouter>
+    <BrowserRouter basename="/course-eval/dist">
       <AppShell>
         <Routes>
           <Route path="/" element={<LandingPage />} />
