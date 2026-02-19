@@ -1,4 +1,4 @@
-import { BrowserRouter, Routes, Route } from "react-router-dom";
+import { HashRouter, Routes, Route } from "react-router-dom";
 import { AppShell } from "./components/layout/AppShell";
 import { LandingPage } from "./pages/LandingPage";
 import { EvaluatePage } from "./pages/EvaluatePage";
@@ -6,7 +6,7 @@ import { ResultsPage } from "./pages/ResultsPage";
 
 function App() {
   return (
-    <BrowserRouter basename="/course-eval/dist">
+    <HashRouter>
       <AppShell>
         <Routes>
           <Route path="/" element={<LandingPage />} />
@@ -14,7 +14,7 @@ function App() {
           <Route path="/results" element={<ResultsPage />} />
         </Routes>
       </AppShell>
-    </BrowserRouter>
+    </HashRouter>
   );
 }
 
