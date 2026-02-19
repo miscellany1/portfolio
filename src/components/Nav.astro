@@ -1,4 +1,6 @@
 ---
+import MobileNav from "./MobileNav.tsx";
+
 const links = [
   { href: "#projects", label: "Projects" },
   { href: "#about", label: "About" },
@@ -10,7 +12,7 @@ const links = [
   class="border-b border-slate-800 bg-slate-950/80 backdrop-blur-sm sticky top-0 z-50"
 >
   <div
-    class="max-w-5xl mx-auto px-4 sm:px-6 h-14 flex items-center justify-between"
+    class="max-w-5xl mx-auto px-4 sm:px-6 h-14 flex items-center justify-between relative"
   >
     <a
       href="#"
@@ -18,7 +20,7 @@ const links = [
     >
       Liam Sheehan
     </a>
-    <nav class="flex items-center gap-6 text-sm">
+    <nav class="hidden sm:flex items-center gap-6 text-sm">
       {
         links.map((link) => (
           <a
@@ -30,5 +32,6 @@ const links = [
         ))
       }
     </nav>
+    <MobileNav client:load />
   </div>
 </header>

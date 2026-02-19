@@ -18,8 +18,8 @@ export default function ProjectCard({
       transition={{ duration: 0.4, delay: index * 0.15 }}
       className={
         featured
-          ? "bg-slate-900 border border-amber-500/30 rounded-xl p-8 sm:p-10 hover:border-amber-500/50 transition-colors relative overflow-hidden"
-          : "bg-slate-900 border border-slate-800 rounded-xl p-6 sm:p-8 hover:border-slate-700 transition-colors"
+          ? "bg-slate-900 border border-amber-500/30 rounded-xl p-8 sm:p-10 hover:border-amber-500/50 transition-all hover:-translate-y-1 hover:shadow-lg hover:shadow-amber-500/10 relative overflow-hidden"
+          : "bg-slate-900 border border-slate-800 rounded-xl p-6 sm:p-8 hover:border-slate-700 transition-all hover:-translate-y-1 hover:shadow-lg hover:shadow-green-500/10"
       }
     >
       {featured && (
@@ -100,7 +100,7 @@ export default function ProjectCard({
             {project.tech.map((t) => (
               <span
                 key={t}
-                className="px-2.5 py-1 text-xs font-medium bg-slate-800 text-slate-400 rounded-md"
+                className="px-2.5 py-1 text-xs font-medium font-mono bg-slate-800 text-slate-400 rounded-md"
               >
                 {t}
               </span>

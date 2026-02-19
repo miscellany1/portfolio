@@ -8,6 +8,9 @@ const {
   title = "Liam Sheehan — Senior Instructional Designer",
   description = "Portfolio showcasing interactive learning experiences, scenario-based training, and evaluation frameworks.",
 } = Astro.props;
+
+const siteUrl = "https://liamksheehan.com";
+const ogImage = `${siteUrl}/og-image.svg`;
 ---
 
 <!doctype html>
@@ -20,6 +23,12 @@ const {
     <meta property="og:title" content={title} />
     <meta property="og:description" content={description} />
     <meta property="og:type" content="website" />
+    <meta property="og:url" content={siteUrl} />
+    <meta property="og:image" content={ogImage} />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content={title} />
+    <meta name="twitter:description" content={description} />
+    <meta name="twitter:image" content={ogImage} />
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     <title>{title}</title>
   </head>

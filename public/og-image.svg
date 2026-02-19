@@ -1,0 +1,9 @@
+<svg width="1200" height="630" xmlns="http://www.w3.org/2000/svg">
+  <rect width="1200" height="630" fill="#020617"/>
+  <rect x="0" y="0" width="1200" height="4" fill="#22c55e"/>
+  <text x="100" y="240" font-family="Inter, system-ui, sans-serif" font-size="28" font-weight="500" fill="#94a3b8">Portfolio</text>
+  <text x="100" y="310" font-family="Inter, system-ui, sans-serif" font-size="56" font-weight="700" fill="#f1f5f9">Liam Sheehan</text>
+  <text x="100" y="380" font-family="Inter, system-ui, sans-serif" font-size="32" font-weight="500" fill="#22c55e">Senior Instructional Designer</text>
+  <text x="100" y="440" font-family="Inter, system-ui, sans-serif" font-size="22" fill="#94a3b8">Interactive learning experiences with scenario-based design</text>
+  <rect x="100" y="500" width="60" height="4" rx="2" fill="#22c55e"/>
+</svg>

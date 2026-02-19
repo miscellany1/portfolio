@@ -1,5 +1,7 @@
 ---
+import { Image } from "astro:assets";
 import SectionReveal from "./SectionReveal.tsx";
+import headshot from "../assets/liam.jpeg";
 ---
 
 <section id="about" class="py-20">
@@ -10,25 +12,28 @@ import SectionReveal from "./SectionReveal.tsx";
         class="bg-slate-900 border border-slate-800 rounded-xl p-6 sm:p-8 hover:border-slate-700 transition-colors"
       >
         <div class="flex flex-col items-center sm:flex-row sm:items-start gap-6">
-          <img src="/liam.jpeg" alt="Liam Sheehan" class="w-32 h-32 rounded-full object-cover border-2 border-green-400 shrink-0" />
+          <Image src={headshot} alt="Liam Sheehan" width={128} height={128} class="w-32 h-32 rounded-full object-cover border-2 border-green-400 shrink-0" />
           <div>
             <p class="text-slate-300 leading-relaxed mb-4">
               I design and build interactive learning experiences that drive
-              measurable outcomes. My work focuses on scenario-based learning,
-              meaningful feedback loops, and learner-centered evaluation — combining
-              instructional design expertise with hands-on development skills.
+              measurable outcomes. From branching scenarios in Articulate Storyline
+              to custom web-based simulations, my work centers on scenario-based
+              learning, meaningful feedback loops, and learner-centered evaluation —
+              combining instructional design expertise with hands-on development skills.
             </p>
             <p class="text-slate-300 leading-relaxed mb-4">
-              Every project I create is grounded in evidence-based practice: clear
-              learning objectives, authentic assessments, and iterative design. I
-              bring ideas to life as fully functional prototypes — not just
-              wireframes — so stakeholders can experience the learning before it
-              ships.
+              My background in game design shapes how I think about engagement,
+              learner agency, and feedback loops — every interaction should feel
+              purposeful. An MS in Instructional Design grounds that instinct in
+              evidence-based practice: clear learning objectives, authentic
+              assessments, and iterative design informed by research.
             </p>
             <p class="text-slate-400 leading-relaxed">
-              Tools I work with include React, TypeScript, Astro, and modern web
-              frameworks — applied in service of learning, not technology for its own
-              sake.
+              I bring ideas to life as functional prototypes, not wireframes, so
+              stakeholders can experience the learning before it ships. My toolkit
+              includes Articulate Storyline, Articulate Rise, React, TypeScript,
+              Astro, and Twine — applied in service of learning, not technology for
+              its own sake.
             </p>
           </div>
         </div>
