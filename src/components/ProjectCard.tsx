@@ -18,8 +18,8 @@ export default function ProjectCard({
       transition={{ duration: 0.4, delay: index * 0.15 }}
       className={
         featured
-          ? "bg-slate-900 border border-amber-500/30 rounded-xl p-8 sm:p-10 hover:border-amber-500/50 transition-all hover:-translate-y-1 hover:shadow-lg hover:shadow-amber-500/10 relative overflow-hidden"
-          : "bg-slate-900 border border-slate-800 rounded-xl p-6 sm:p-8 hover:border-slate-700 transition-all hover:-translate-y-1 hover:shadow-lg hover:shadow-green-500/10"
+          ? "flex flex-col h-full bg-slate-900 border border-amber-500/30 rounded-xl p-8 sm:p-10 hover:border-amber-500/50 transition-all hover:-translate-y-1 hover:shadow-lg hover:shadow-amber-500/10 relative overflow-hidden"
+          : "flex flex-col h-full bg-slate-900 border border-slate-800 rounded-xl p-6 sm:p-8 hover:border-slate-700 transition-all hover:-translate-y-1 hover:shadow-lg hover:shadow-green-500/10"
       }
     >
       {featured && (
@@ -115,8 +115,8 @@ export default function ProjectCard({
         rel="noopener noreferrer"
         className={
           featured
-            ? "inline-flex items-center gap-2 px-6 py-3 bg-amber-600 hover:bg-amber-700 text-white text-sm font-medium rounded-lg transition-colors"
-            : "inline-flex items-center gap-2 px-5 py-2.5 bg-green-600 hover:bg-green-700 text-white text-sm font-medium rounded-lg transition-colors"
+            ? "mt-auto inline-flex items-center gap-2 px-6 py-3 bg-amber-600 hover:bg-amber-700 text-white text-sm font-medium rounded-lg transition-colors"
+            : "mt-auto inline-flex items-center gap-2 px-5 py-2.5 bg-green-600 hover:bg-green-700 text-white text-sm font-medium rounded-lg transition-colors"
         }
       >
         {project.linkLabel ?? "View Project"}
