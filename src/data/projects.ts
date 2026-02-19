@@ -53,6 +53,21 @@ export const projects: Project[] = [
     linkLabel: "Play Game",
   },
   {
+    title: "The Conversation",
+    subtitle: "Difficult Conversations Simulation",
+    description:
+      "An Articulate Storyline branching scenario where learners practice navigating a tough performance conversation. Four decision points test empathy, pushback handling, root-cause exploration, and action planning, with a dynamic results page that reviews every choice against best practice using the SBI+I framework.",
+    skills: [
+      "Branching scenario design",
+      "Simulation-based assessment",
+      "Feedback frameworks (SBI+I)",
+      "Storyline development",
+    ],
+    tech: ["Articulate Storyline", "HTML", "CSS", "JavaScript"],
+    demoUrl: "/the-conversation/TheConversation/story.html",
+    linkLabel: "Play Scenario",
+  },
+  {
     title: "TeachReady",
     subtitle: "Online Teaching Best Practices",
     description:

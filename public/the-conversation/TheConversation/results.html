@@ -1,0 +1,494 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>The Conversation — Results</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;0,700;1,400&family=DM+Sans:ital,wght@0,400;0,500;0,600;0,700;1,400&display=swap" rel="stylesheet">
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+:root{
+  --navy:#1E3A5F;
+  --accent:#D97706;
+  --bg:#0d1b2e;
+  --card:#132238;
+  --card-border:#1e3554;
+  --text:#e2e8f0;
+  --text-muted:#94a3b8;
+  --green:#22c55e;
+  --amber:#D97706;
+  --red:#ef4444;
+  --font-heading:'Cormorant Garamond',Georgia,serif;
+  --font-body:'DM Sans',system-ui,sans-serif;
+}
+html{font-size:16px;scroll-behavior:smooth}
+body{
+  font-family:var(--font-body);
+  background:var(--bg);
+  color:var(--text);
+  line-height:1.6;
+  min-height:100vh;
+  overflow-x:hidden;
+}
+body::before{
+  content:'';
+  position:fixed;
+  inset:0;
+  background:
+    radial-gradient(ellipse 80% 60% at 20% 10%, rgba(30,58,95,.45) 0%, transparent 60%),
+    radial-gradient(ellipse 60% 50% at 80% 90%, rgba(217,119,6,.08) 0%, transparent 50%);
+  pointer-events:none;
+  z-index:0;
+}
+
+/* ── fade-in animation ── */
+.fade-in{opacity:0;transform:translateY(18px);animation:fadeUp .7s ease forwards}
+.fade-in-d1{animation-delay:.1s}
+.fade-in-d2{animation-delay:.22s}
+.fade-in-d3{animation-delay:.34s}
+.fade-in-d4{animation-delay:.46s}
+.fade-in-d5{animation-delay:.58s}
+.fade-in-d6{animation-delay:.7s}
+@keyframes fadeUp{to{opacity:1;transform:translateY(0)}}
+
+/* ── layout ── */
+.container{
+  position:relative;z-index:1;
+  max-width:860px;
+  margin:0 auto;
+  padding:2.5rem 1.25rem 3rem;
+}
+
+/* ── no-data fallback ── */
+.no-data{
+  text-align:center;
+  padding:6rem 1.5rem;
+}
+.no-data h1{
+  font-family:var(--font-heading);
+  font-size:2.2rem;
+  font-weight:700;
+  margin-bottom:.75rem;
+  color:var(--accent);
+}
+.no-data p{
+  color:var(--text-muted);
+  font-size:1.05rem;
+  max-width:420px;
+  margin:0 auto;
+  line-height:1.7;
+}
+
+/* ── header ── */
+.header{text-align:center;margin-bottom:2.5rem}
+.header__eyebrow{
+  font-family:var(--font-body);
+  font-size:.75rem;
+  font-weight:600;
+  letter-spacing:.18em;
+  text-transform:uppercase;
+  color:var(--accent);
+  margin-bottom:.4rem;
+}
+.header__title{
+  font-family:var(--font-heading);
+  font-size:clamp(2rem,5vw,3rem);
+  font-weight:700;
+  letter-spacing:-.02em;
+  line-height:1.15;
+  margin-bottom:1.2rem;
+}
+.header__score-ring{
+  display:inline-flex;
+  align-items:center;
+  justify-content:center;
+  gap:.6rem;
+  background:var(--card);
+  border:1px solid var(--card-border);
+  border-radius:999px;
+  padding:.55rem 1.6rem;
+  margin-bottom:.9rem;
+}
+.header__score-num{
+  font-family:var(--font-heading);
+  font-size:1.75rem;
+  font-weight:700;
+}
+.header__score-denom{
+  font-size:.95rem;
+  color:var(--text-muted);
+  font-weight:500;
+}
+.header__tier{
+  display:inline-block;
+  font-family:var(--font-heading);
+  font-size:1.35rem;
+  font-weight:600;
+  font-style:italic;
+  padding:.15rem .8rem;
+  border-radius:6px;
+  margin-top:.2rem;
+}
+.tier--green{color:var(--green);background:rgba(34,197,94,.1);border:1px solid rgba(34,197,94,.2)}
+.tier--amber{color:var(--amber);background:rgba(217,119,6,.1);border:1px solid rgba(217,119,6,.2)}
+.tier--red{color:var(--red);background:rgba(239,68,68,.1);border:1px solid rgba(239,68,68,.2)}
+
+/* ── section label ── */
+.section-label{
+  font-family:var(--font-heading);
+  font-size:1.45rem;
+  font-weight:700;
+  margin-bottom:1rem;
+  padding-bottom:.5rem;
+  border-bottom:1px solid var(--card-border);
+}
+
+/* ── choice card rows ── */
+.choices{display:flex;flex-direction:column;gap:1rem;margin-bottom:2.5rem}
+.choice-card{
+  background:var(--card);
+  border:1px solid var(--card-border);
+  border-radius:12px;
+  padding:1.25rem 1.4rem;
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:1.2rem;
+  transition:border-color .25s ease, box-shadow .25s ease;
+}
+.choice-card:hover{
+  border-color:rgba(217,119,6,.35);
+  box-shadow:0 0 24px rgba(217,119,6,.06);
+}
+.choice-card__dp-label{
+  grid-column:1/-1;
+  font-family:var(--font-heading);
+  font-size:1.1rem;
+  font-weight:700;
+  display:flex;
+  align-items:center;
+  gap:.55rem;
+  padding-bottom:.6rem;
+  border-bottom:1px solid rgba(255,255,255,.06);
+}
+.dp-num{
+  font-family:var(--font-body);
+  font-size:.65rem;
+  font-weight:700;
+  letter-spacing:.1em;
+  text-transform:uppercase;
+  background:var(--navy);
+  color:var(--accent);
+  padding:.2rem .55rem;
+  border-radius:4px;
+}
+
+/* columns */
+.choice-col{display:flex;flex-direction:column;gap:.4rem}
+.choice-col__heading{
+  font-size:.7rem;
+  font-weight:600;
+  letter-spacing:.12em;
+  text-transform:uppercase;
+  color:var(--text-muted);
+  margin-bottom:.15rem;
+}
+.choice-col__body{font-size:.92rem;line-height:1.65;color:var(--text)}
+.choice-col__body--rationale{
+  font-size:.88rem;
+  color:var(--text-muted);
+  font-style:italic;
+  line-height:1.65;
+}
+
+/* badge */
+.badge{
+  display:inline-flex;
+  align-items:center;
+  gap:.35rem;
+  font-size:.75rem;
+  font-weight:600;
+  padding:.18rem .6rem;
+  border-radius:999px;
+  margin-bottom:.3rem;
+  width:fit-content;
+}
+.badge__dot{
+  width:8px;height:8px;
+  border-radius:50%;
+  flex-shrink:0;
+}
+.badge--A{background:rgba(34,197,94,.12);color:var(--green)}
+.badge--A .badge__dot{background:var(--green)}
+.badge--B{background:rgba(217,119,6,.12);color:var(--amber)}
+.badge--B .badge__dot{background:var(--amber)}
+.badge--C{background:rgba(239,68,68,.12);color:var(--red)}
+.badge--C .badge__dot{background:var(--red)}
+
+/* ── footer ── */
+.footer{margin-top:2rem}
+
+.try-again-wrap{text-align:center;margin-bottom:2rem}
+.btn-try-again{
+  display:inline-flex;align-items:center;gap:.5rem;
+  font-family:var(--font-body);
+  font-size:.95rem;font-weight:600;
+  color:#0d1b2e;
+  background:var(--accent);
+  border:none;border-radius:8px;
+  padding:.7rem 1.8rem;
+  cursor:pointer;
+  text-decoration:none;
+  transition:background .2s,transform .15s,box-shadow .2s;
+  box-shadow:0 2px 12px rgba(217,119,6,.25);
+}
+.btn-try-again:hover{
+  background:#e8850a;
+  transform:translateY(-1px);
+  box-shadow:0 4px 20px rgba(217,119,6,.35);
+}
+.btn-try-again:active{transform:translateY(0)}
+.btn-try-again svg{width:16px;height:16px;fill:currentColor}
+
+/* ── SBI+I callout ── */
+.sbi-card{
+  background:var(--card);
+  border:1px solid var(--card-border);
+  border-radius:12px;
+  padding:1.4rem 1.5rem;
+}
+.sbi-card__title{
+  font-family:var(--font-heading);
+  font-size:1.2rem;
+  font-weight:700;
+  margin-bottom:.25rem;
+}
+.sbi-card__subtitle{
+  font-size:.82rem;
+  color:var(--text-muted);
+  margin-bottom:1rem;
+}
+.sbi-tiles{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(170px,1fr));
+  gap:.75rem;
+}
+.sbi-tile{
+  background:rgba(255,255,255,.03);
+  border:1px solid rgba(255,255,255,.06);
+  border-radius:8px;
+  padding:.85rem 1rem;
+}
+.sbi-tile__label{
+  font-size:.7rem;
+  font-weight:700;
+  letter-spacing:.12em;
+  text-transform:uppercase;
+  color:var(--accent);
+  margin-bottom:.3rem;
+}
+.sbi-tile__text{
+  font-size:.85rem;
+  color:var(--text-muted);
+  line-height:1.6;
+  font-style:italic;
+}
+
+/* ── responsive ── */
+@media(max-width:640px){
+  .choice-card{grid-template-columns:1fr;gap:.75rem}
+  .choice-col+.choice-col{
+    padding-top:.7rem;
+    border-top:1px solid rgba(255,255,255,.05);
+  }
+  .sbi-tiles{grid-template-columns:1fr 1fr}
+  .container{padding:1.5rem 1rem 2rem}
+}
+@media(max-width:380px){
+  .sbi-tiles{grid-template-columns:1fr}
+}
+</style>
+</head>
+<body>
+<div class="container" id="app"></div>
+
+<script>
+(function(){
+  /* ── Data ── */
+  const DP_DATA = {
+    dp1: {
+      label: 'Opening the Conversation',
+      num: 1,
+      choices: {
+        A: { text: 'Led with empathy and specific observations, framed as concern not accusation.' },
+        B: { text: 'Got to the point but came across as cold. Yuki stiffened.' },
+        C: { text: 'Vague and apologetic opener created anxiety and eroded trust.' }
+      },
+      best: 'Be specific and lead with concern. Name what you\u2019ve observed and frame it as out of character.'
+    },
+    dp2: {
+      label: 'Handling Pushback',
+      num: 2,
+      choices: {
+        A: { text: 'Validated her track record and acknowledged the Sarah situation by name.' },
+        B: { text: 'Acknowledged contributions but pivoted to the problem too quickly.' },
+        C: { text: 'Backed down entirely. Taught Yuki that pushback works.' }
+      },
+      best: 'Acknowledge the emotion before redirecting. Skipping validation makes people feel unheard.'
+    },
+    dp3: {
+      label: 'Exploring Root Cause',
+      num: 3,
+      choices: {
+        A: { text: 'Asked what would be most helpful before jumping to solutions.' },
+        B: { text: 'Acknowledged the workload issue but moved to solutions too fast.' },
+        C: { text: 'Dismissed the root cause and focused only on output.' }
+      },
+      best: 'Resist the urge to jump to solutions. Asking \u201Cwhat would help?\u201D gives ownership and surfaces info you wouldn\u2019t have thought of.'
+    },
+    dp4: {
+      label: 'Setting Next Steps',
+      num: 4,
+      choices: {
+        A: { text: 'Co-created a specific, time-bound plan with structured check-ins.' },
+        B: { text: 'Set a deadline but left Yuki feeling like she was on probation.' },
+        C: { text: 'Left it vague. Nothing will change.' }
+      },
+      best: 'Effective action plans are specific, time-bound, and co-created. Structured check-ins put accountability where it belongs: on the manager.'
+    }
+  };
+
+  const CHOICE_LABELS = { A: 'Choice A', B: 'Choice B', C: 'Choice C' };
+
+  const SBI_TILES = [
+    { label: 'Situation', text: '\u201CIn last Thursday\u2019s standup\u2026\u201D' },
+    { label: 'Behavior', text: '\u201CI noticed you cut off two teammates mid-sentence.\u201D' },
+    { label: 'Impact', text: '\u201CIt made the room go quiet and people stopped sharing.\u201D' },
+    { label: 'Intent', text: '\u201CI know that\u2019s not the environment you want to create.\u201D' }
+  ];
+
+  /* ── Parse URL params ── */
+  const params = new URLSearchParams(window.location.search);
+  const score = params.get('score');
+  const dp1 = params.get('dp1');
+  const dp2 = params.get('dp2');
+  const dp3 = params.get('dp3');
+  const dp4 = params.get('dp4');
+
+  const app = document.getElementById('app');
+
+  /* ── Validate ── */
+  const validChoices = ['A','B','C'];
+  const scoreNum = score !== null ? parseInt(score, 10) : NaN;
+  const hasValid = !isNaN(scoreNum) && scoreNum >= 3 && scoreNum <= 12
+    && validChoices.includes(dp1)
+    && validChoices.includes(dp2)
+    && validChoices.includes(dp3)
+    && validChoices.includes(dp4);
+
+  if (!hasValid) {
+    app.innerHTML = `
+      <div class="no-data fade-in">
+        <h1>No Results Available</h1>
+        <p>This page displays your results from <em>The Conversation</em>. It looks like you arrived here without completing the module, or the link is missing data.</p>
+        <p style="margin-top:1.2rem"><a href="./story.html" class="btn-try-again" style="display:inline-flex">
+          <svg viewBox="0 0 16 16"><path d="M2.5 1a.5.5 0 0 1 .5.5V4h2.5a.5.5 0 0 1 0 1H2.5a.5.5 0 0 1-.5-.5v-3a.5.5 0 0 1 .5-.5m11 10a.5.5 0 0 1 .5.5v3a.5.5 0 0 1-.5.5H11a.5.5 0 0 1 0-1h2.5v-2.5a.5.5 0 0 1 .5-.5"/><path d="M8 3a5 5 0 1 0 4.546 2.914.5.5 0 1 1 .908-.418A6 6 0 1 1 8 2z"/><path d="M8 3a5 5 0 1 1-4.546 7.086.5.5 0 1 0-.908.418A6 6 0 1 0 8 14z"/></svg>
+          Launch The Conversation
+        </a></p>
+      </div>`;
+    return;
+  }
+
+  /* ── Tier ── */
+  let tierLabel, tierClass;
+  if (scoreNum >= 10) { tierLabel = 'Supportive Leader'; tierClass = 'tier--green'; }
+  else if (scoreNum >= 6) { tierLabel = 'Mixed Signals'; tierClass = 'tier--amber'; }
+  else { tierLabel = 'Missed Opportunity'; tierClass = 'tier--red'; }
+
+  /* ── Build HTML ── */
+  const picks = { dp1, dp2, dp3, dp4 };
+
+  function choiceCard(key, delayClass) {
+    const dp = DP_DATA[key];
+    const pick = picks[key];
+    const ch = dp.choices[pick];
+    return `
+      <div class="choice-card fade-in ${delayClass}">
+        <div class="choice-card__dp-label">
+          <span class="dp-num">DP ${dp.num}</span>
+          ${dp.label}
+        </div>
+        <div class="choice-col">
+          <div class="choice-col__heading">Your Choice</div>
+          <span class="badge badge--${pick}">
+            <span class="badge__dot"></span>
+            ${CHOICE_LABELS[pick]}
+          </span>
+          <div class="choice-col__body">${ch.text}</div>
+        </div>
+        <div class="choice-col">
+          <div class="choice-col__heading">Best Response</div>
+          <span class="badge badge--A">
+            <span class="badge__dot"></span>
+            Choice A
+          </span>
+          <div class="choice-col__body--rationale">${dp.best}</div>
+        </div>
+      </div>`;
+  }
+
+  function sbiTile(t) {
+    return `
+      <div class="sbi-tile">
+        <div class="sbi-tile__label">${t.label}</div>
+        <div class="sbi-tile__text">${t.text}</div>
+      </div>`;
+  }
+
+  app.innerHTML = `
+    <!-- Header -->
+    <header class="header fade-in">
+      <div class="header__eyebrow">Module Results</div>
+      <h1 class="header__title">The Conversation</h1>
+      <div class="header__score-ring">
+        <span class="header__score-num">${scoreNum}</span>
+        <span class="header__score-denom">/ 12</span>
+      </div>
+      <br>
+      <span class="header__tier ${tierClass}">${tierLabel}</span>
+    </header>
+
+    <!-- Choice Review Panel -->
+    <section>
+      <h2 class="section-label fade-in fade-in-d1">Your Decisions</h2>
+      <div class="choices">
+        ${choiceCard('dp1','fade-in-d2')}
+        ${choiceCard('dp2','fade-in-d3')}
+        ${choiceCard('dp3','fade-in-d4')}
+        ${choiceCard('dp4','fade-in-d5')}
+      </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer fade-in fade-in-d6">
+      <div class="try-again-wrap">
+        <a href="./story.html" class="btn-try-again">
+          <svg viewBox="0 0 16 16"><path d="M11.534 7h3.932a.25.25 0 0 1 .192.41l-1.966 2.36a.25.25 0 0 1-.384 0l-1.966-2.36a.25.25 0 0 1 .192-.41m-11 2h3.932a.25.25 0 0 0 .192-.41L2.692 6.23a.25.25 0 0 0-.384 0L.342 8.59A.25.25 0 0 0 .534 9"/><path fill-rule="evenodd" d="M8 3a5 5 0 1 0 4.546 2.914.5.5 0 1 1 .908-.418A6 6 0 1 1 8 2z"/><path fill-rule="evenodd" d="M8 13A5 5 0 1 0 3.454 10.086a.5.5 0 0 1-.908.418A6 6 0 1 1 8 14z"/></svg>
+          Try Again
+        </a>
+      </div>
+
+      <div class="sbi-card">
+        <div class="sbi-card__title">The SBI+I Framework</div>
+        <div class="sbi-card__subtitle">A tool for delivering clear, respectful, behaviour-focused feedback.</div>
+        <div class="sbi-tiles">
+          ${SBI_TILES.map(sbiTile).join('')}
+        </div>
+      </div>
+    </footer>
+  `;
+})();
+</script>
+</body>
+</html>
