@@ -81,6 +81,6 @@ export const projects: Project[] = [
       "Rapid authoring",
     ],
     tech: ["Articulate Rise"],
-    demoUrl: "/teachready/scormcontent/index.html",
+    demoUrl: "/teachready/launch.html",
   },
 ];
