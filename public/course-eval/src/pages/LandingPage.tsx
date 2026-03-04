@@ -10,7 +10,7 @@ export function LandingPage() {
 
       {/* Category Cards Grid */}
       <section className="pb-16">
-        <h2 className="text-xl font-semibold text-slate-200 mb-6 text-center">
+        <h2 className="text-xl font-semibold text-text-primary mb-6 text-center">
           5 Categories, 13 Criteria
         </h2>
         <div className="flex flex-wrap justify-center gap-4">
@@ -28,10 +28,10 @@ export function LandingPage() {
         transition={{ duration: 0.5 }}
         className="pb-20 max-w-3xl mx-auto"
       >
-        <h2 className="text-xl font-semibold text-slate-200 mb-4 text-center">
+        <h2 className="text-xl font-semibold text-text-primary mb-4 text-center">
           About This Framework
         </h2>
-        <div className="bg-slate-900 border border-slate-800 rounded-xl p-6 space-y-4 text-sm text-slate-400 leading-relaxed">
+        <div className="bg-surface-raised border border-border-subtle rounded-xl p-6 space-y-4 text-sm text-text-secondary leading-relaxed shadow-sm">
           <p>
             This evaluation framework was designed to provide a comprehensive,
             systematic approach to assessing instructional quality. It organizes
@@ -40,7 +40,7 @@ export function LandingPage() {
             compliance.
           </p>
           <div>
-            <h3 className="font-medium text-slate-300 mb-1">
+            <h3 className="font-medium text-text-primary mb-1">
               Why five categories?
             </h3>
             <p>
@@ -54,7 +54,7 @@ export function LandingPage() {
             </p>
           </div>
           <div>
-            <h3 className="font-medium text-slate-300 mb-1">
+            <h3 className="font-medium text-text-primary mb-1">
               Why a 4-point scale?
             </h3>
             <p>
@@ -66,7 +66,7 @@ export function LandingPage() {
             </p>
           </div>
           <div>
-            <h3 className="font-medium text-slate-300 mb-1">
+            <h3 className="font-medium text-text-primary mb-1">
               Designed for action
             </h3>
             <p>

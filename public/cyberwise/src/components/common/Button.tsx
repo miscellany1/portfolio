@@ -12,9 +12,9 @@ interface ButtonProps {
 }
 
 const variants = {
-  primary: 'bg-blue-600 hover:bg-blue-500 text-white border-blue-500/50',
-  secondary: 'bg-slate-700 hover:bg-slate-600 text-slate-100 border-slate-600/50',
-  ghost: 'bg-transparent hover:bg-slate-800 text-slate-300 border-transparent',
+  primary: 'bg-accent hover:bg-accent-hover text-white border-accent/50',
+  secondary: 'bg-surface-overlay hover:bg-border-subtle text-text-primary border-border-subtle',
+  ghost: 'bg-transparent hover:bg-surface-overlay text-text-secondary border-transparent',
   danger: 'bg-red-600/20 hover:bg-red-600/30 text-red-400 border-red-500/30',
 };
 
@@ -40,7 +40,7 @@ export const Button = ({
     className={`
       inline-flex items-center justify-center gap-2 rounded-lg border
       font-medium transition-colors duration-200 cursor-pointer
-      focus:outline-none focus:ring-2 focus:ring-blue-500/50 focus:ring-offset-2 focus:ring-offset-slate-900
+      focus:outline-none focus:ring-2 focus:ring-accent/50 focus:ring-offset-2 focus:ring-offset-surface
       disabled:opacity-50 disabled:cursor-not-allowed
       ${variants[variant]} ${sizes[size]} ${className}
     `}

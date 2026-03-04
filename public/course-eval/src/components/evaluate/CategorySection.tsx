@@ -23,19 +23,19 @@ export function CategorySection({
       initial={{ opacity: 0, y: 16 }}
       animate={{ opacity: 1, y: 0 }}
       transition={{ duration: 0.3, delay: index * 0.08 }}
-      className="bg-slate-900 border border-slate-800 rounded-xl overflow-hidden"
+      className="bg-surface-raised border border-border-subtle rounded-xl overflow-hidden shadow-sm"
     >
       <button
         type="button"
         onClick={() => setExpanded(!expanded)}
-        className="w-full px-5 py-4 flex items-center justify-between text-left cursor-pointer hover:bg-slate-800/30 transition-colors"
+        className="w-full px-5 py-4 flex items-center justify-between text-left cursor-pointer hover:bg-surface-overlay/30 transition-colors"
       >
         <div className="flex items-center gap-3">
           <div
             className={`w-6 h-6 rounded-full flex items-center justify-center text-xs font-medium ${
               allRated
-                ? "bg-green-400/20 text-green-400"
-                : "bg-slate-800 text-slate-400"
+                ? "bg-accent/20 text-accent"
+                : "bg-surface-overlay text-text-secondary"
             }`}
           >
             {allRated ? (
@@ -58,12 +58,12 @@ export function CategorySection({
               </span>
             )}
           </div>
-          <h3 className="font-semibold text-slate-100 text-sm">
+          <h3 className="font-semibold text-text-primary text-sm">
             {category.name}
           </h3>
         </div>
         <svg
-          className={`w-4 h-4 text-slate-500 transition-transform ${expanded ? "rotate-180" : ""}`}
+          className={`w-4 h-4 text-text-secondary transition-transform ${expanded ? "rotate-180" : ""}`}
           fill="none"
           viewBox="0 0 24 24"
           stroke="currentColor"

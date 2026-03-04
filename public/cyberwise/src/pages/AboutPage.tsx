@@ -36,8 +36,8 @@ export const AboutPage = () => {
         initial={{ opacity: 0, y: 20 }}
         animate={{ opacity: 1, y: 0 }}
       >
-        <h1 className="text-2xl font-bold text-slate-100">About Cyberwise</h1>
-        <p className="text-sm text-slate-400">
+        <h1 className="text-2xl font-bold text-text-primary">About Cyberwise</h1>
+        <p className="text-sm text-text-secondary">
           Design decisions, instructional strategy, and technical details.
         </p>
       </motion.div>
@@ -51,21 +51,21 @@ export const AboutPage = () => {
             transition={{ delay: i * 0.08 }}
           >
             <Card variant="default" padding="md">
-              <h2 className="mb-2 text-base font-semibold text-slate-200">{section.title}</h2>
-              <p className="text-sm leading-relaxed text-slate-400">{section.content}</p>
+              <h2 className="mb-2 text-base font-semibold text-text-primary">{section.title}</h2>
+              <p className="text-sm leading-relaxed text-text-secondary">{section.content}</p>
             </Card>
           </motion.div>
         ))}
       </div>
 
       <Card variant="outlined" padding="md">
-        <h2 className="mb-2 text-base font-semibold text-slate-200">Tech Stack</h2>
+        <h2 className="mb-2 text-base font-semibold text-text-primary">Tech Stack</h2>
         <div className="flex flex-wrap gap-2">
           {['React 18', 'TypeScript', 'Vite', 'Tailwind CSS', 'Framer Motion', 'Zustand', 'React Router'].map(
             (tech) => (
               <span
                 key={tech}
-                className="rounded-full border border-slate-700 bg-slate-800 px-3 py-1 text-xs font-medium text-slate-300"
+                className="rounded-full border border-border-subtle bg-surface-overlay px-3 py-1 text-xs font-medium text-text-secondary"
               >
                 {tech}
               </span>

@@ -16,20 +16,20 @@ export function ProgressSidebar() {
   const progress = total > 0 ? (rated / total) * 100 : 0;
 
   return (
-    <div className="bg-slate-900 border border-slate-800 rounded-xl p-4 sticky top-20">
-      <h3 className="font-semibold text-sm text-slate-200 mb-3">Progress</h3>
+    <div className="bg-surface-raised border border-border-subtle rounded-xl p-4 sticky top-20 shadow-sm">
+      <h3 className="font-semibold text-sm text-text-primary mb-3">Progress</h3>
 
       {/* Progress bar */}
       <div className="mb-4">
-        <div className="flex justify-between text-xs text-slate-400 mb-1.5">
+        <div className="flex justify-between text-xs text-text-secondary mb-1.5">
           <span>
             {rated} of {total} rated
           </span>
           <span>{Math.round(progress)}%</span>
         </div>
-        <div className="h-2 bg-slate-800 rounded-full overflow-hidden">
+        <div className="h-2 bg-surface-overlay rounded-full overflow-hidden">
           <div
-            className="h-full bg-green-500 rounded-full transition-all duration-300"
+            className="h-full bg-accent rounded-full transition-all duration-300"
             style={{ width: `${progress}%` }}
           />
         </div>
@@ -46,8 +46,8 @@ export function ProgressSidebar() {
               <div
                 className={`w-4 h-4 rounded-full flex items-center justify-center ${
                   catComplete
-                    ? "bg-green-400/20 text-green-400"
-                    : "bg-slate-800 text-slate-500"
+                    ? "bg-accent/20 text-accent"
+                    : "bg-surface-overlay text-text-secondary"
                 }`}
               >
                 {catComplete ? (
@@ -72,7 +72,7 @@ export function ProgressSidebar() {
               </div>
               <span
                 className={
-                  catComplete ? "text-slate-300" : "text-slate-500"
+                  catComplete ? "text-text-primary" : "text-text-secondary"
                 }
               >
                 {cat.name}
@@ -87,8 +87,8 @@ export function ProgressSidebar() {
         to={complete ? "/results" : "#"}
         className={`mt-4 block w-full text-center py-2.5 rounded-lg text-sm font-medium transition-colors ${
           complete
-            ? "bg-green-600 hover:bg-green-700 text-white"
-            : "bg-slate-800 text-slate-500 cursor-not-allowed"
+            ? "bg-accent hover:bg-accent-hover text-white"
+            : "bg-surface-overlay text-text-secondary cursor-not-allowed"
         }`}
         onClick={(e) => !complete && e.preventDefault()}
       >

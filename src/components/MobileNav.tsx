@@ -14,7 +14,7 @@ export default function MobileNav() {
     <div className="sm:hidden">
       <button
         onClick={() => setOpen(!open)}
-        className="text-slate-400 hover:text-slate-200 transition-colors p-1"
+        className="text-text-secondary hover:text-text-primary transition-colors p-1"
         aria-label={open ? "Close menu" : "Open menu"}
       >
         {open ? (
@@ -55,7 +55,7 @@ export default function MobileNav() {
             animate={{ opacity: 1, height: "auto" }}
             exit={{ opacity: 0, height: 0 }}
             transition={{ duration: 0.2 }}
-            className="absolute top-14 left-0 right-0 bg-slate-950/95 backdrop-blur-sm border-b border-slate-800 overflow-hidden"
+            className="absolute top-14 left-0 right-0 bg-surface/95 backdrop-blur-sm border-b border-border-subtle overflow-hidden"
           >
             <div className="max-w-5xl mx-auto px-4 py-4 flex flex-col gap-3">
               {links.map((link) => (
@@ -63,7 +63,7 @@ export default function MobileNav() {
                   key={link.href}
                   href={link.href}
                   onClick={() => setOpen(false)}
-                  className="text-slate-400 hover:text-slate-200 transition-colors text-sm py-1"
+                  className="text-text-secondary hover:text-text-primary transition-colors text-sm py-1"
                 >
                   {link.label}
                 </a>

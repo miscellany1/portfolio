@@ -8,6 +8,17 @@
 @theme {
   --font-sans: "Inter", ui-sans-serif, system-ui, sans-serif;
   --font-mono: "JetBrains Mono", ui-monospace, monospace;
+  --color-surface: #FAF8F5;
+  --color-surface-raised: #FFFFFF;
+  --color-surface-overlay: #F5F0EB;
+  --color-border-subtle: #E2DDD8;
+  --color-text-primary: #2D2D2D;
+  --color-text-secondary: #6D7C90;
+  --color-accent: #CC5959;
+  --color-accent-hover: #B84D4D;
+  --color-accent-gold: #E6B35A;
+  --color-accent-jade: #4A635D;
+  --color-surface-dark: #1C1C1C;
 }
 
 html {
@@ -29,9 +40,9 @@ body {
   background: transparent;
 }
 ::-webkit-scrollbar-thumb {
-  background: #475569;
+  background: #E2DDD8;
   border-radius: 3px;
 }
 ::-webkit-scrollbar-thumb:hover {
-  background: #64748b;
+  background: #C5BFB9;
 }

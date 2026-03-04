@@ -37,36 +37,36 @@ export const LandingPage = () => {
         {/* Logo / Title */}
         <div className="space-y-4">
           <motion.div
-            className="mx-auto flex h-20 w-20 items-center justify-center rounded-2xl border border-blue-500/30 bg-blue-500/10"
+            className="mx-auto flex h-20 w-20 items-center justify-center rounded-2xl border border-accent/30 bg-accent/10"
             initial={{ scale: 0 }}
             animate={{ scale: 1 }}
             transition={{ type: 'spring', damping: 15, delay: 0.2 }}
           >
             <span className="text-4xl">🛡️</span>
           </motion.div>
-          <h1 className="text-4xl font-bold tracking-tight text-slate-100 md:text-5xl">
-            Cyber<span className="text-blue-400">wise</span>
+          <h1 className="text-4xl font-bold tracking-tight text-text-primary md:text-5xl">
+            Cyber<span className="text-accent">wise</span>
           </h1>
-          <p className="text-lg text-slate-400">
+          <p className="text-lg text-text-secondary">
             Cybersecurity Awareness Training
           </p>
         </div>
 
         {/* Description */}
         <motion.div
-          className="space-y-3 rounded-xl border border-slate-800 bg-slate-900/50 p-6"
+          className="space-y-3 rounded-xl border border-border-subtle bg-surface-raised p-6 shadow-sm"
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           transition={{ delay: 0.3 }}
         >
-          <p className="text-sm leading-relaxed text-slate-300">
-            Welcome to your first week at <span className="font-semibold text-blue-400">NovaTech</span>.
+          <p className="text-sm leading-relaxed text-text-primary">
+            Welcome to your first week at <span className="font-semibold text-accent">NovaTech</span>.
             As a new employee, you'll face real-world cybersecurity threats across five days — from phishing
             emails to incident response scenarios.
           </p>
-          <p className="text-sm text-slate-400">
-            Every choice you make affects your <span className="font-medium text-slate-300">Security Score</span> and
-            {' '}<span className="font-medium text-slate-300">Trust Level</span>. Can you survive the week
+          <p className="text-sm text-text-secondary">
+            Every choice you make affects your <span className="font-medium text-text-primary">Security Score</span> and
+            {' '}<span className="font-medium text-text-primary">Trust Level</span>. Can you survive the week
             and become a Security Champion?
           </p>
         </motion.div>
@@ -83,9 +83,9 @@ export const LandingPage = () => {
             { icon: '🎯', label: '20+ Decisions' },
             { icon: '🏆', label: '10 Achievements' },
           ].map((feat) => (
-            <div key={feat.label} className="rounded-lg border border-slate-800 bg-slate-900/30 p-3">
+            <div key={feat.label} className="rounded-lg border border-border-subtle bg-surface-raised p-3 shadow-sm">
               <span className="text-2xl">{feat.icon}</span>
-              <p className="mt-1 text-xs font-medium text-slate-400">{feat.label}</p>
+              <p className="mt-1 text-xs font-medium text-text-secondary">{feat.label}</p>
             </div>
           ))}
         </motion.div>
@@ -132,14 +132,14 @@ export const LandingPage = () => {
         >
           <button
             onClick={() => navigate('/objectives')}
-            className="text-sm text-slate-300 hover:text-slate-100 transition-colors underline underline-offset-2 decoration-slate-600 cursor-pointer"
+            className="text-sm text-text-secondary hover:text-text-primary transition-colors underline underline-offset-2 decoration-border-subtle cursor-pointer"
           >
             Learning Objectives
           </button>
-          <span className="text-slate-600">·</span>
+          <span className="text-border-subtle">·</span>
           <button
             onClick={() => navigate('/about')}
-            className="text-sm text-slate-300 hover:text-slate-100 transition-colors underline underline-offset-2 decoration-slate-600 cursor-pointer"
+            className="text-sm text-text-secondary hover:text-text-primary transition-colors underline underline-offset-2 decoration-border-subtle cursor-pointer"
           >
             About this Project
           </button>

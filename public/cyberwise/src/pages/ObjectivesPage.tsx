@@ -22,8 +22,8 @@ export const ObjectivesPage = () => {
         initial={{ opacity: 0, y: 20 }}
         animate={{ opacity: 1, y: 0 }}
       >
-        <h1 className="text-2xl font-bold text-slate-100">Learning Objectives</h1>
-        <p className="text-sm text-slate-400">
+        <h1 className="text-2xl font-bold text-text-primary">Learning Objectives</h1>
+        <p className="text-sm text-text-secondary">
           Each day targets a different level of Bloom's Taxonomy, progressively building
           from knowledge recall to critical evaluation.
         </p>
@@ -31,7 +31,7 @@ export const ObjectivesPage = () => {
 
       {/* Bloom's Taxonomy visual */}
       <Card variant="outlined" padding="md">
-        <div className="mb-3 text-xs font-semibold uppercase tracking-wider text-slate-400">
+        <div className="mb-3 text-xs font-semibold uppercase tracking-wider text-text-secondary">
           Bloom's Taxonomy Progression
         </div>
         <div className="flex items-end gap-1">
@@ -44,11 +44,11 @@ export const ObjectivesPage = () => {
               transition={{ delay: i * 0.1 }}
             >
               <div
-                className="w-full rounded-t-md bg-gradient-to-t from-blue-500/20 to-blue-400/5"
+                className="w-full rounded-t-md bg-gradient-to-t from-accent/20 to-accent/5"
                 style={{ height: `${(i + 1) * 20 + 20}px` }}
               />
-              <span className="text-xs font-medium text-slate-300">{obj.day.slice(0, 3)}</span>
-              <span className="text-xs text-slate-400">{obj.bloomsLevel}</span>
+              <span className="text-xs font-medium text-text-primary">{obj.day.slice(0, 3)}</span>
+              <span className="text-xs text-text-secondary">{obj.bloomsLevel}</span>
             </motion.div>
           ))}
         </div>
@@ -59,7 +59,7 @@ export const ObjectivesPage = () => {
         {learningObjectives.map((obj, i) => (
           <motion.div
             key={obj.day}
-            className="rounded-xl border border-slate-700/50 bg-slate-800/50 p-5"
+            className="rounded-xl border border-border-subtle bg-surface-raised p-5 shadow-sm"
             initial={{ opacity: 0, x: -20 }}
             animate={{ opacity: 1, x: 0 }}
             transition={{ delay: i * 0.1 }}
@@ -67,15 +67,15 @@ export const ObjectivesPage = () => {
             <div className="flex items-start justify-between gap-4">
               <div className="space-y-2">
                 <div className="flex items-center gap-2">
-                  <span className="text-sm font-semibold text-slate-200">{obj.day}</span>
+                  <span className="text-sm font-semibold text-text-primary">{obj.day}</span>
                   <span className={`rounded-full border px-2 py-0.5 text-xs font-bold uppercase tracking-wide ${bloomsColors[obj.bloomsLevel] ?? ''}`}>
                     {obj.bloomsLevel}
                   </span>
                 </div>
-                <p className="text-sm font-medium text-slate-300">
-                  <span className="text-blue-400">{obj.bloomsVerb}:</span> {obj.objective}
+                <p className="text-sm font-medium text-text-primary">
+                  <span className="text-accent">{obj.bloomsVerb}:</span> {obj.objective}
                 </p>
-                <p className="text-xs text-slate-400">{obj.description}</p>
+                <p className="text-xs text-text-secondary">{obj.description}</p>
               </div>
             </div>
           </motion.div>

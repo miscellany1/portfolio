@@ -9,14 +9,15 @@
     "preview": "astro preview"
   },
   "dependencies": {
-    "astro": "^5.7.10",
     "@astrojs/react": "^4.2.1",
+    "@fontsource/dm-serif-display": "^5.2.8",
+    "@fontsource/inter": "^5.1.1",
+    "@fontsource/jetbrains-mono": "^5.1.2",
+    "@tailwindcss/vite": "^4.1.4",
+    "astro": "^5.7.10",
+    "framer-motion": "^12.7.3",
     "react": "^19.1.0",
     "react-dom": "^19.1.0",
-    "@tailwindcss/vite": "^4.1.4",
-    "tailwindcss": "^4.1.4",
-    "framer-motion": "^12.7.3",
-    "@fontsource/inter": "^5.1.1",
-    "@fontsource/jetbrains-mono": "^5.1.2"
+    "tailwindcss": "^4.1.4"
   }
 }

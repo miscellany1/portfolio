@@ -1,13 +1,13 @@
 export const colors = {
   bg: {
-    primary: '#0f172a',    // slate-900
-    secondary: '#1e293b',  // slate-800
-    surface: '#334155',    // slate-700
-    elevated: '#475569',   // slate-600
+    primary: '#FAF8F5',    // warm cream
+    secondary: '#F5F0EB',  // overlay
+    surface: '#FFFFFF',    // raised
+    elevated: '#E2DDD8',   // border
   },
   accent: {
-    blue: '#3b82f6',
-    cyan: '#06b6d4',
+    blue: '#CC5959',       // terracotta (primary accent)
+    cyan: '#4A635D',       // smokey jade
   },
   semantic: {
     optimal: '#22c55e',    // green-500
@@ -16,9 +16,9 @@ export const colors = {
     dangerous: '#ef4444',  // red-500
   },
   text: {
-    primary: '#f1f5f9',    // slate-100
-    secondary: '#94a3b8',  // slate-400
-    muted: '#64748b',      // slate-500
+    primary: '#2D2D2D',    // soft black
+    secondary: '#6D7C90',  // warm gray
+    muted: '#9CA3AF',      // lighter gray
   },
 } as const;
 

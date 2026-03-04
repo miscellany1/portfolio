@@ -9,9 +9,9 @@ interface CardProps {
 }
 
 const variantStyles = {
-  default: 'bg-slate-800/80 border-slate-700/50',
-  elevated: 'bg-slate-800 border-slate-600/50 shadow-lg shadow-black/20',
-  outlined: 'bg-transparent border-slate-700',
+  default: 'bg-surface-raised border-border-subtle shadow-sm',
+  elevated: 'bg-surface-raised border-border-subtle shadow-md',
+  outlined: 'bg-transparent border-border-subtle',
 };
 
 const paddingStyles = {

@@ -43,8 +43,8 @@ export const DaySelectPage = () => {
         transition={{ duration: 0.5 }}
       >
         <div className="text-center space-y-2">
-          <h1 className="text-2xl font-bold text-slate-100">Select a Day</h1>
-          <p className="text-sm text-slate-400">
+          <h1 className="text-2xl font-bold text-text-primary">Select a Day</h1>
+          <p className="text-sm text-text-secondary">
             Jump to any day of your first week at NovaTech.
           </p>
         </div>
@@ -59,7 +59,7 @@ export const DaySelectPage = () => {
               <motion.button
                 key={day}
                 onClick={() => handleSelectDay(day)}
-                className="w-full cursor-pointer rounded-xl border border-slate-700/50 bg-slate-800/60 p-5 text-left transition-colors hover:border-blue-500/40 hover:bg-slate-800"
+                className="w-full cursor-pointer rounded-xl border border-border-subtle bg-surface-raised p-5 text-left transition-colors hover:border-accent/30 hover:shadow-sm shadow-sm"
                 initial={{ opacity: 0, x: -20 }}
                 animate={{ opacity: 1, x: 0 }}
                 transition={{ delay: i * 0.08, duration: 0.3 }}
@@ -70,15 +70,15 @@ export const DaySelectPage = () => {
                       isCompleted
                         ? 'bg-green-500/20 text-green-400 border border-green-500/30'
                         : isCurrent
-                          ? 'bg-blue-500/20 text-blue-400 border border-blue-500/30'
-                          : 'bg-slate-700/50 text-slate-400 border border-slate-600/30'
+                          ? 'bg-accent/20 text-accent border border-accent/30'
+                          : 'bg-surface-overlay text-text-secondary border border-border-subtle'
                     }`}
                   >
                     {isCompleted ? '\u2713' : DAY_ICONS[day]}
                   </div>
                   <div className="min-w-0 flex-1">
                     <div className="flex items-center gap-2">
-                      <span className="font-semibold text-slate-100">
+                      <span className="font-semibold text-text-primary">
                         {DAY_LABELS[day]}
                       </span>
                       {isCompleted && (
@@ -87,19 +87,19 @@ export const DaySelectPage = () => {
                         </span>
                       )}
                       {isCurrent && (
-                        <span className="rounded-full bg-blue-500/10 px-2 py-0.5 text-xs font-medium text-blue-400">
+                        <span className="rounded-full bg-accent/10 px-2 py-0.5 text-xs font-medium text-accent">
                           In Progress
                         </span>
                       )}
                     </div>
-                    <p className="mt-0.5 text-sm text-slate-400">
+                    <p className="mt-0.5 text-sm text-text-secondary">
                       {scenario.title}
                     </p>
-                    <p className="text-xs text-slate-500 mt-0.5">
+                    <p className="text-xs text-text-secondary mt-0.5">
                       {BLOOM_SHORT[day]} &middot; {scenario.simulationType}
                     </p>
                   </div>
-                  <span className="text-slate-500">&rarr;</span>
+                  <span className="text-text-secondary">&rarr;</span>
                 </div>
               </motion.button>
             );

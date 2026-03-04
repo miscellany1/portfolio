@@ -189,8 +189,8 @@ export function getTierLabel(score: number): {
   label: string;
   color: string;
 } {
-  if (score >= 3.5) return { label: "Exemplary", color: "text-green-400" };
-  if (score >= 2.5) return { label: "Proficient", color: "text-sky-400" };
+  if (score >= 3.5) return { label: "Exemplary", color: "text-accent-jade" };
+  if (score >= 2.5) return { label: "Proficient", color: "text-accent" };
   if (score >= 1.5) return { label: "Developing", color: "text-amber-400" };
   return { label: "Needs Significant Revision", color: "text-red-400" };
 }

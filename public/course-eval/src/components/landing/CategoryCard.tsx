@@ -25,13 +25,13 @@ export function CategoryCard({
       initial={{ opacity: 0, y: 20 }}
       animate={{ opacity: 1, y: 0 }}
       transition={{ duration: 0.4, delay: index * 0.1 }}
-      className="w-full sm:w-[calc(50%-0.5rem)] lg:w-[calc(33.333%-0.75rem)] bg-slate-900 border border-slate-800 rounded-xl p-5 hover:border-slate-700 transition-colors cursor-pointer"
+      className="w-full sm:w-[calc(50%-0.5rem)] lg:w-[calc(33.333%-0.75rem)] bg-surface-raised border border-border-subtle rounded-xl p-5 hover:border-accent/30 transition-colors cursor-pointer shadow-sm"
       onClick={() => setExpanded(!expanded)}
     >
       <div className="flex items-start gap-3">
-        <div className="p-2 bg-green-500/10 rounded-lg shrink-0">
+        <div className="p-2 bg-accent/10 rounded-lg shrink-0">
           <svg
-            className="w-5 h-5 text-green-400"
+            className="w-5 h-5 text-accent"
             fill="none"
             viewBox="0 0 24 24"
             stroke="currentColor"
@@ -41,15 +41,15 @@ export function CategoryCard({
           </svg>
         </div>
         <div className="flex-1 min-w-0">
-          <h3 className="font-semibold text-slate-100 text-sm">
+          <h3 className="font-semibold text-text-primary text-sm">
             {category.name}
           </h3>
-          <p className="text-xs text-slate-500 mt-1">
+          <p className="text-xs text-text-secondary mt-1">
             {category.criteria.length} criteria
           </p>
         </div>
         <svg
-          className={`w-4 h-4 text-slate-500 transition-transform ${expanded ? "rotate-180" : ""}`}
+          className={`w-4 h-4 text-text-secondary transition-transform ${expanded ? "rotate-180" : ""}`}
           fill="none"
           viewBox="0 0 24 24"
           stroke="currentColor"
@@ -71,13 +71,13 @@ export function CategoryCard({
             transition={{ duration: 0.2 }}
             className="overflow-hidden"
           >
-            <ul className="mt-4 space-y-2 border-t border-slate-800 pt-3">
+            <ul className="mt-4 space-y-2 border-t border-border-subtle pt-3">
               {category.criteria.map((criterion) => (
                 <li key={criterion.id} className="text-sm">
-                  <span className="font-medium text-slate-300">
+                  <span className="font-medium text-text-primary">
                     {criterion.name}
                   </span>
-                  <p className="text-xs text-slate-500 mt-0.5">
+                  <p className="text-xs text-text-secondary mt-0.5">
                     {criterion.description}
                   </p>
                 </li>

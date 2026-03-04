@@ -2,28 +2,25 @@
 import HeroReveal from "./HeroReveal.tsx";
 ---
 
-<section class="py-24 sm:py-32">
-  <div class="max-w-5xl mx-auto px-4 sm:px-6">
+<section class="py-32 sm:py-40 lg:py-48">
+  <div class="max-w-4xl mx-auto px-4 sm:px-6">
     <HeroReveal client:load>
-      <p class="text-green-400 font-medium text-sm tracking-wide uppercase mb-4">
-        Portfolio
-      </p>
-      <p class="text-lg sm:text-xl text-slate-400 mb-2">
-        Hi, I'm Liam Sheehan
-      </p>
-      <h1 class="text-4xl sm:text-5xl lg:text-6xl font-bold text-slate-100 mb-6">
+      <p class="text-accent font-medium text-sm tracking-wide uppercase mb-4">
         Senior Instructional Designer
-      </h1>
-      <p class="text-lg sm:text-xl text-slate-400 max-w-2xl mx-auto mb-10">
-        Building interactive learning experiences with scenario-based design,
-        measurable outcomes, and modern web technology.
       </p>
-      <div class="flex items-center justify-center gap-4">
+      <h1 class="font-serif text-5xl sm:text-6xl lg:text-7xl text-text-primary mb-6">
+        Where game design meets learning design.
+      </h1>
+      <p class="text-lg sm:text-xl text-text-secondary max-w-2xl mx-auto mb-10">
+        I design scenario-based training and custom web experiences using
+        Articulate Storyline, Rise, and React.
+      </p>
+      <div class="flex items-center justify-center">
         <a
           href="#projects"
-          class="inline-flex items-center gap-2 px-6 py-3 bg-green-600 hover:bg-green-700 text-white font-medium rounded-lg transition-colors"
+          class="inline-flex items-center gap-2 px-6 py-3 bg-accent hover:bg-accent-hover text-white font-medium rounded-lg transition-colors"
         >
-          View Projects
+          See My Work
           <svg
             class="w-4 h-4"
             fill="none"
@@ -36,12 +33,6 @@ import HeroReveal from "./HeroReveal.tsx";
               stroke-linejoin="round"
               d="M19 9l-7 7-7-7"></path>
           </svg>
-        </a>
-        <a
-          href="#contact"
-          class="inline-flex items-center gap-2 px-6 py-3 bg-slate-800 hover:bg-slate-700 text-slate-200 font-medium rounded-lg transition-colors"
-        >
-          Get in Touch
         </a>
       </div>
     </HeroReveal>

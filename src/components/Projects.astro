@@ -7,13 +7,13 @@ const featured = projects.find((p) => p.featured);
 const rest = projects.filter((p) => !p.featured);
 ---
 
-<section id="projects" class="py-20">
+<section id="projects" class="py-20 bg-surface-overlay">
   <div class="max-w-5xl mx-auto px-4 sm:px-6">
     <SectionReveal client:visible>
-      <h2 class="text-2xl sm:text-3xl font-bold text-slate-100 mb-2">
+      <h2 class="text-2xl sm:text-3xl font-serif text-text-primary mb-2">
         Projects
       </h2>
-      <p class="text-slate-400 mb-10">
+      <p class="text-text-secondary mb-10">
         Interactive prototypes that demonstrate instructional design in action.
       </p>
     </SectionReveal>

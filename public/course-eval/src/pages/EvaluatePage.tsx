@@ -16,7 +16,7 @@ export function EvaluatePage() {
         <div>
           <label
             htmlFor="courseName"
-            className="block text-xs font-medium text-slate-400 mb-1.5"
+            className="block text-xs font-medium text-text-secondary mb-1.5"
           >
             Course Name
           </label>
@@ -26,13 +26,13 @@ export function EvaluatePage() {
             value={courseName}
             onChange={(e) => setCourseName(e.target.value)}
             placeholder="Enter course name..."
-            className="w-full bg-slate-900 border border-slate-800 rounded-lg px-3 py-2.5 text-sm text-slate-200 placeholder:text-slate-600 focus:outline-none focus:border-green-500/50"
+            className="w-full bg-surface-raised border border-border-subtle rounded-lg px-3 py-2.5 text-sm text-text-primary placeholder:text-text-secondary/50 focus:outline-none focus:border-accent/50"
           />
         </div>
         <div>
           <label
             htmlFor="evaluatorName"
-            className="block text-xs font-medium text-slate-400 mb-1.5"
+            className="block text-xs font-medium text-text-secondary mb-1.5"
           >
             Evaluator Name
           </label>
@@ -42,7 +42,7 @@ export function EvaluatePage() {
             value={evaluatorName}
             onChange={(e) => setEvaluatorName(e.target.value)}
             placeholder="Your name..."
-            className="w-full bg-slate-900 border border-slate-800 rounded-lg px-3 py-2.5 text-sm text-slate-200 placeholder:text-slate-600 focus:outline-none focus:border-green-500/50"
+            className="w-full bg-surface-raised border border-border-subtle rounded-lg px-3 py-2.5 text-sm text-text-primary placeholder:text-text-secondary/50 focus:outline-none focus:border-accent/50"
           />
         </div>
       </div>

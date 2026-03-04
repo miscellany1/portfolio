@@ -17,14 +17,14 @@ export function CategoryBreakdown() {
             initial={{ opacity: 0, y: 12 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.3, delay: catIdx * 0.1 }}
-            className="bg-slate-900 border border-slate-800 rounded-xl p-5 print-break-inside-avoid"
+            className="bg-surface-raised border border-border-subtle rounded-xl p-5 shadow-sm print-break-inside-avoid"
             data-print-light
           >
             <div className="flex items-center justify-between mb-3">
-              <h3 className="font-semibold text-sm text-slate-200">
+              <h3 className="font-semibold text-sm text-text-primary">
                 {category.name}
               </h3>
-              <span className="text-sm font-mono text-slate-400">
+              <span className="text-sm font-mono text-text-secondary">
                 {catScore.toFixed(1)} / 4.0
               </span>
             </div>
@@ -38,24 +38,24 @@ export function CategoryBreakdown() {
                 return (
                   <div key={criterion.id}>
                     <div className="flex items-center justify-between text-xs mb-1">
-                      <span className="text-slate-400">{criterion.name}</span>
+                      <span className="text-text-secondary">{criterion.name}</span>
                       <span
-                        className={`font-mono ${level?.textClass || "text-slate-600"}`}
+                        className={`font-mono ${level?.textClass || "text-text-secondary"}`}
                       >
                         {value > 0 ? level?.label : "Unrated"}
                       </span>
                     </div>
-                    <div className="h-2 bg-slate-800 rounded-full overflow-hidden">
+                    <div className="h-2 bg-surface-overlay rounded-full overflow-hidden">
                       <div
                         className="h-full rounded-full transition-all duration-500"
                         style={{
                           width: `${pct}%`,
-                          backgroundColor: level?.color || "#475569",
+                          backgroundColor: level?.color || "#E2DDD8",
                         }}
                       />
                     </div>
                     {note && (
-                      <p className="text-xs text-slate-500 mt-1 italic">
+                      <p className="text-xs text-text-secondary mt-1 italic">
                         {note}
                       </p>
                     )}

@@ -15,18 +15,18 @@ export function CriterionRow({ criterion }: { criterion: Criterion }) {
   const [showNotes, setShowNotes] = useState(note.length > 0);
 
   return (
-    <div className="py-4 border-b border-slate-800/50 last:border-0">
+    <div className="py-4 border-b border-border-subtle/50 last:border-0">
       <div className="flex items-start justify-between gap-4">
         <div className="flex-1 min-w-0">
-          <h4 className="text-sm font-medium text-slate-200">
+          <h4 className="text-sm font-medium text-text-primary">
             {criterion.name}
           </h4>
-          <p className="text-xs text-slate-500 mt-1">{criterion.description}</p>
+          <p className="text-xs text-text-secondary mt-1">{criterion.description}</p>
         </div>
         <button
           type="button"
           onClick={() => setShowNotes(!showNotes)}
-          className="shrink-0 p-1.5 text-slate-500 hover:text-slate-300 transition-colors cursor-pointer"
+          className="shrink-0 p-1.5 text-text-secondary hover:text-text-primary transition-colors cursor-pointer"
           title="Add notes"
         >
           <svg
@@ -67,7 +67,7 @@ export function CriterionRow({ criterion }: { criterion: Criterion }) {
               value={note}
               onChange={(e) => setNote(criterion.id, e.target.value)}
               placeholder="Add notes for this criterion..."
-              className="mt-3 w-full bg-slate-800/50 border border-slate-700 rounded-lg px-3 py-2 text-sm text-slate-200 placeholder:text-slate-600 resize-y min-h-[60px] focus:outline-none focus:border-green-500/50"
+              className="mt-3 w-full bg-surface-overlay border border-border-subtle rounded-lg px-3 py-2 text-sm text-text-primary placeholder:text-text-secondary/50 resize-y min-h-[60px] focus:outline-none focus:border-accent/50"
               rows={2}
             />
           </motion.div>

@@ -60,13 +60,13 @@ export const ScenarioPage = () => {
       <div className="flex flex-col gap-4 sm:flex-row sm:items-start sm:justify-between">
         <div>
           <motion.h1
-            className="text-xl font-bold text-slate-100"
+            className="text-xl font-bold text-text-primary"
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
           >
             {scenario.title}
           </motion.h1>
-          <p className="text-sm text-slate-400">
+          <p className="text-sm text-text-secondary">
             {scenario.dayLabel} — Step {stepNumber} of {totalSteps} — {scenario.bloomsLevel}
           </p>
         </div>
@@ -105,7 +105,7 @@ export const ScenarioPage = () => {
           animate={{ opacity: 1 }}
           transition={{ delay: 0.2 }}
         >
-          <p className="text-xs font-semibold uppercase tracking-wider text-slate-400">
+          <p className="text-xs font-semibold uppercase tracking-wider text-text-secondary">
             What do you do?
           </p>
           {availableChoices.map((choice, i) => (

@@ -44,13 +44,13 @@ export const DayTransitionPage = () => {
         initial={{ opacity: 0, y: 20 }}
         animate={{ opacity: 1, y: 0 }}
       >
-        <p className="text-sm font-medium uppercase tracking-wider text-slate-400">
+        <p className="text-sm font-medium uppercase tracking-wider text-text-secondary">
           Day Complete
         </p>
-        <h1 className="text-3xl font-bold text-slate-100">
+        <h1 className="text-3xl font-bold text-text-primary">
           {DAY_LABELS[day]} Wrap-Up
         </h1>
-        <p className="text-sm text-slate-400">{scenario.title}</p>
+        <p className="text-sm text-text-secondary">{scenario.title}</p>
       </motion.div>
 
       {/* Stats */}
@@ -63,11 +63,11 @@ export const DayTransitionPage = () => {
         <SecurityScoreGauge score={securityScore} size="lg" />
         <div className="w-40 space-y-4">
           <TrustLevel trust={trustLevel} />
-          <div className="rounded-lg border border-slate-700/50 bg-slate-800/50 p-3">
-            <p className="text-xs font-semibold uppercase tracking-wider text-slate-400">
+          <div className="rounded-lg border border-border-subtle bg-surface-raised p-3 shadow-sm">
+            <p className="text-xs font-semibold uppercase tracking-wider text-text-secondary">
               Day Performance
             </p>
-            <p className="text-2xl font-bold font-mono text-slate-200">{dayScore}%</p>
+            <p className="text-2xl font-bold font-mono text-text-primary">{dayScore}%</p>
           </div>
         </div>
       </motion.div>

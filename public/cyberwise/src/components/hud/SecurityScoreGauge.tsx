@@ -29,7 +29,7 @@ export const SecurityScoreGauge = ({ score, size = 'md' }: SecurityScoreGaugePro
           cy={dim / 2}
           r={radius}
           fill="none"
-          stroke="#1e293b"
+          stroke="#E2DDD8"
           strokeWidth={stroke}
         />
         <motion.circle
@@ -49,7 +49,7 @@ export const SecurityScoreGauge = ({ score, size = 'md' }: SecurityScoreGaugePro
         <span className={`${text} font-bold font-mono`} style={{ color }}>
           {animatedScore}
         </span>
-        <span className={`${label} font-medium text-slate-400 uppercase tracking-wider`}>
+        <span className={`${label} font-medium text-text-secondary uppercase tracking-wider`}>
           Score
         </span>
       </div>

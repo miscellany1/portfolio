@@ -23,12 +23,12 @@ export function ResultsPage() {
   if (getRatedCount() === 0) {
     return (
       <div className="max-w-5xl mx-auto px-4 sm:px-6 py-20 text-center">
-        <p className="text-slate-400 mb-4">
+        <p className="text-text-secondary mb-4">
           No evaluation data yet. Start by rating a course.
         </p>
         <button
           onClick={() => navigate("/evaluate")}
-          className="px-5 py-2.5 bg-green-600 hover:bg-green-700 text-white rounded-lg text-sm font-medium transition-colors cursor-pointer"
+          className="px-5 py-2.5 bg-accent hover:bg-accent-hover text-white rounded-lg text-sm font-medium transition-colors cursor-pointer"
         >
           Start Evaluation
         </button>
@@ -44,10 +44,10 @@ export function ResultsPage() {
         animate={{ opacity: 1, y: 0 }}
         className="mb-8 text-center"
       >
-        <h1 className="text-2xl font-bold text-white">
+        <h1 className="text-2xl font-bold text-text-primary">
           {courseName || "Untitled Course"}
         </h1>
-        <p className="text-sm text-slate-400 mt-1">
+        <p className="text-sm text-text-secondary mt-1">
           {evaluatorName && `Evaluated by ${evaluatorName} · `}
           {date}
           {!isComplete() && (
@@ -63,7 +63,7 @@ export function ResultsPage() {
 
       {/* Radar chart — full width */}
       <div
-        className="bg-slate-900 border border-slate-800 rounded-xl p-6 mb-8 flex items-center justify-center"
+        className="bg-surface-raised border border-border-subtle rounded-xl p-6 mb-8 flex items-center justify-center shadow-sm"
         data-print-light
       >
         <RadarChart />
@@ -76,7 +76,7 @@ export function ResultsPage() {
 
       {/* Category Breakdown */}
       <div className="mb-8 print-break-before">
-        <h2 className="text-lg font-semibold text-slate-200 mb-4">
+        <h2 className="text-lg font-semibold text-text-primary mb-4">
           Category Breakdown
         </h2>
         <CategoryBreakdown />
@@ -86,7 +86,7 @@ export function ResultsPage() {
       <div className="flex flex-wrap gap-3 justify-center no-print pb-8">
         <button
           onClick={() => window.print()}
-          className="px-5 py-2.5 bg-slate-800 hover:bg-slate-700 text-slate-200 rounded-lg text-sm font-medium transition-colors cursor-pointer flex items-center gap-2"
+          className="px-5 py-2.5 bg-surface-overlay hover:bg-border-subtle text-text-primary rounded-lg text-sm font-medium transition-colors cursor-pointer flex items-center gap-2"
         >
           <svg
             className="w-4 h-4"
@@ -105,7 +105,7 @@ export function ResultsPage() {
         </button>
         <button
           onClick={handleNewEvaluation}
-          className="px-5 py-2.5 bg-green-600 hover:bg-green-700 text-white rounded-lg text-sm font-medium transition-colors cursor-pointer"
+          className="px-5 py-2.5 bg-accent hover:bg-accent-hover text-white rounded-lg text-sm font-medium transition-colors cursor-pointer"
         >
           Evaluate Another Course
         </button>

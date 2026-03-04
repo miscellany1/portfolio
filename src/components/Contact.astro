@@ -2,26 +2,26 @@
 import SectionReveal from "./SectionReveal.tsx";
 ---
 
-<section id="contact" class="py-20">
+<section id="contact" class="py-20 bg-surface-overlay">
   <div class="max-w-5xl mx-auto px-4 sm:px-6">
     <SectionReveal client:visible>
-      <h2 class="text-2xl sm:text-3xl font-bold text-slate-100 mb-2">
+      <h2 class="text-2xl sm:text-3xl font-serif text-text-primary mb-2">
         Get in Touch
       </h2>
       <div
-        class="bg-slate-900 border border-slate-800 rounded-xl p-6 sm:p-8 hover:border-slate-700 transition-colors mt-8"
+        class="bg-surface-raised border border-border-subtle rounded-xl p-6 sm:p-8 hover:border-accent/30 transition-colors mt-8 shadow-sm"
       >
-        <p class="text-slate-300 leading-relaxed mb-2">
+        <p class="text-text-primary leading-relaxed mb-2">
           I'm always interested in collaborating on interactive learning projects,
           scenario-based training, or anything that blends instructional design with
           creative technology.
         </p>
-        <p class="text-slate-400 mb-6">
+        <p class="text-text-secondary mb-6">
           If you have a project in mind or just want to connect, drop me a line.
         </p>
         <a
           href="mailto:lsheehan27@gmail.com"
-          class="inline-flex items-center gap-3 px-6 py-3 bg-green-600 hover:bg-green-700 text-white font-medium rounded-lg transition-colors"
+          class="inline-flex items-center gap-3 px-6 py-3 bg-accent hover:bg-accent-hover text-white font-medium rounded-lg transition-colors"
         >
           <svg
             class="w-5 h-5"

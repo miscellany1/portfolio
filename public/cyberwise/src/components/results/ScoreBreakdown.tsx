@@ -16,18 +16,18 @@ export const ScoreBreakdown = ({ choiceHistory }: ScoreBreakdownProps) => {
 
   return (
     <div className="space-y-4">
-      <h3 className="text-sm font-semibold uppercase tracking-wider text-slate-400">
+      <h3 className="text-sm font-semibold uppercase tracking-wider text-text-secondary">
         Choice Breakdown
       </h3>
       {dayGroups.map((group, gi) => (
         <motion.div
           key={group.day}
-          className="rounded-lg border border-slate-700/50 bg-slate-800/50 p-4"
+          className="rounded-lg border border-border-subtle bg-surface-raised p-4 shadow-sm"
           initial={{ opacity: 0, y: 10 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ delay: gi * 0.1 }}
         >
-          <h4 className="mb-3 text-sm font-semibold text-slate-200">{group.label}</h4>
+          <h4 className="mb-3 text-sm font-semibold text-text-primary">{group.label}</h4>
           <div className="flex flex-wrap gap-2">
             {group.choices.map((choice, ci) => (
               <span
@@ -38,7 +38,7 @@ export const ScoreBreakdown = ({ choiceHistory }: ScoreBreakdownProps) => {
               </span>
             ))}
           </div>
-          <div className="mt-2 flex gap-4 text-xs font-mono text-slate-400">
+          <div className="mt-2 flex gap-4 text-xs font-mono text-text-secondary">
             <span>
               Score: {group.choices.reduce((s, c) => s + c.scoreChange, 0) >= 0 ? '+' : ''}
               {group.choices.reduce((s, c) => s + c.scoreChange, 0)}

@@ -16,7 +16,7 @@ export function RatingButton({
       className={`px-3 py-1.5 text-xs font-medium rounded-full border transition-all cursor-pointer ${
         selected
           ? `${level.bgClass} ${level.borderClass} ${level.textClass}`
-          : "border-slate-700 text-slate-400 hover:border-slate-500 hover:text-slate-300"
+          : "border-border-subtle text-text-secondary hover:border-text-secondary hover:text-text-primary"
       }`}
     >
       {level.label}

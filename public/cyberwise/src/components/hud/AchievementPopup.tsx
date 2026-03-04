@@ -20,7 +20,7 @@ export const AchievementPopup = () => {
     <AnimatePresence>
       {achievement && (
         <motion.div
-          className="fixed bottom-6 right-6 z-50 flex items-center gap-3 rounded-xl border border-yellow-500/30 bg-slate-800/95 px-5 py-4 shadow-2xl backdrop-blur-sm"
+          className="fixed bottom-6 right-6 z-50 flex items-center gap-3 rounded-xl border border-accent-gold/30 bg-surface-raised/95 px-5 py-4 shadow-2xl backdrop-blur-sm"
           initial={{ opacity: 0, y: 50, scale: 0.9 }}
           animate={{ opacity: 1, y: 0, scale: 1 }}
           exit={{ opacity: 0, y: 20, scale: 0.95 }}
@@ -30,11 +30,11 @@ export const AchievementPopup = () => {
         >
           <span className="text-3xl">{achievement.icon}</span>
           <div>
-            <p className="text-xs font-semibold uppercase tracking-wider text-yellow-400">
+            <p className="text-xs font-semibold uppercase tracking-wider text-accent-gold">
               Achievement Unlocked
             </p>
-            <p className="text-sm font-bold text-slate-100">{achievement.name}</p>
-            <p className="text-xs text-slate-400">{achievement.description}</p>
+            <p className="text-sm font-bold text-text-primary">{achievement.name}</p>
+            <p className="text-xs text-text-secondary">{achievement.description}</p>
           </div>
         </motion.div>
       )}

@@ -33,10 +33,10 @@ export function StrengthsWeaknesses() {
     >
       {/* Strengths */}
       <div
-        className="bg-slate-900 border border-slate-800 rounded-xl p-5 print-break-inside-avoid"
+        className="bg-surface-raised border border-border-subtle rounded-xl p-5 shadow-sm print-break-inside-avoid"
         data-print-light
       >
-        <h3 className="font-semibold text-sm text-green-400 mb-3 flex items-center gap-2">
+        <h3 className="font-semibold text-sm text-accent-jade mb-3 flex items-center gap-2">
           <svg
             className="w-4 h-4"
             fill="none"
@@ -53,7 +53,7 @@ export function StrengthsWeaknesses() {
           Strengths
         </h3>
         {strengths.length === 0 ? (
-          <p className="text-xs text-slate-500">
+          <p className="text-xs text-text-secondary">
             No criteria scored 3 or above.
           </p>
         ) : (
@@ -68,8 +68,8 @@ export function StrengthsWeaknesses() {
                     {item.score}
                   </span>
                   <div>
-                    <span className="text-slate-300">{item.name}</span>
-                    <span className="text-slate-600 ml-1">
+                    <span className="text-text-primary">{item.name}</span>
+                    <span className="text-text-secondary ml-1">
                       ({item.categoryName})
                     </span>
                   </div>
@@ -82,7 +82,7 @@ export function StrengthsWeaknesses() {
 
       {/* Areas for Improvement */}
       <div
-        className="bg-slate-900 border border-slate-800 rounded-xl p-5 print-break-inside-avoid"
+        className="bg-surface-raised border border-border-subtle rounded-xl p-5 shadow-sm print-break-inside-avoid"
         data-print-light
       >
         <h3 className="font-semibold text-sm text-amber-400 mb-3 flex items-center gap-2">
@@ -102,7 +102,7 @@ export function StrengthsWeaknesses() {
           Areas for Improvement
         </h3>
         {improvements.length === 0 ? (
-          <p className="text-xs text-slate-500">
+          <p className="text-xs text-text-secondary">
             No criteria scored 2 or below.
           </p>
         ) : (
@@ -117,8 +117,8 @@ export function StrengthsWeaknesses() {
                     {item.score}
                   </span>
                   <div>
-                    <span className="text-slate-300">{item.name}</span>
-                    <span className="text-slate-600 ml-1">
+                    <span className="text-text-primary">{item.name}</span>
+                    <span className="text-text-secondary ml-1">
                       ({item.categoryName})
                     </span>
                   </div>

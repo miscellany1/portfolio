@@ -15,9 +15,9 @@ const tierStyles: Record<string, { border: string; glow: string; badge: string }
     badge: 'bg-green-500/10 text-green-400 border-green-500/30',
   },
   getting_there: {
-    border: 'border-yellow-500/30',
-    glow: 'shadow-yellow-500/10',
-    badge: 'bg-yellow-500/10 text-yellow-400 border-yellow-500/30',
+    border: 'border-accent-gold/30',
+    glow: 'shadow-accent-gold/10',
+    badge: 'bg-accent-gold/10 text-accent-gold border-accent-gold/30',
   },
   compromised: {
     border: 'border-red-500/30',
@@ -32,7 +32,7 @@ export const EndingNarrative = ({ ending, trustPenalized, originalEndingNarrativ
 
   return (
     <motion.div
-      className={`rounded-xl border ${style.border} bg-slate-800/80 p-6 shadow-lg ${style.glow}`}
+      className={`rounded-xl border ${style.border} bg-surface-raised p-6 shadow-md ${style.glow}`}
       initial={{ opacity: 0, y: 20 }}
       animate={{ opacity: 1, y: 0 }}
       transition={{ duration: 0.6 }}
@@ -46,7 +46,7 @@ export const EndingNarrative = ({ ending, trustPenalized, originalEndingNarrativ
         {ending.narrative.split('\n\n').map((paragraph, i) => (
           <motion.p
             key={i}
-            className="text-sm leading-relaxed text-slate-300"
+            className="text-sm leading-relaxed text-text-primary"
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             transition={{ delay: 0.3 + i * 0.2 }}
@@ -56,7 +56,7 @@ export const EndingNarrative = ({ ending, trustPenalized, originalEndingNarrativ
         ))}
       </div>
       <motion.p
-        className="mt-4 text-xs font-medium text-slate-400 italic"
+        className="mt-4 text-xs font-medium text-text-secondary italic"
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
         transition={{ delay: 1 }}
@@ -73,7 +73,7 @@ export const EndingNarrative = ({ ending, trustPenalized, originalEndingNarrativ
           <p className="mb-2 text-xs font-bold uppercase tracking-wider text-amber-400">
             Trust Penalty
           </p>
-          <p className="text-sm leading-relaxed text-amber-200/80">
+          <p className="text-sm leading-relaxed text-amber-600">
             {originalEndingNarrative}
           </p>
         </motion.div>

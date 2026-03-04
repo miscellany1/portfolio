@@ -17,7 +17,7 @@ export const FeedbackPanel = ({ choice, optimalChoice, onContinue, onGoBack, con
 
   return (
     <motion.div
-      className="space-y-4 rounded-xl border border-slate-700/50 bg-slate-800/80 p-6"
+      className="space-y-4 rounded-xl border border-border-subtle bg-surface-raised p-6 shadow-sm"
       initial={{ opacity: 0, y: 20 }}
       animate={{ opacity: 1, y: 0 }}
       transition={{ duration: 0.4, ease: 'easeOut' }}
@@ -39,21 +39,21 @@ export const FeedbackPanel = ({ choice, optimalChoice, onContinue, onGoBack, con
 
       {/* Feedback content */}
       <div className="space-y-3">
-        <h3 className="text-base font-semibold text-slate-100">{choice.feedback.title}</h3>
-        <p className="text-sm leading-relaxed text-slate-300">{choice.feedback.explanation}</p>
-        <div className="rounded-lg border border-slate-700/30 bg-slate-900/50 p-4">
-          <p className="mb-1 text-xs font-semibold uppercase tracking-wider text-blue-400">
+        <h3 className="text-base font-semibold text-text-primary">{choice.feedback.title}</h3>
+        <p className="text-sm leading-relaxed text-text-primary">{choice.feedback.explanation}</p>
+        <div className="rounded-lg border border-border-subtle bg-surface-overlay p-4">
+          <p className="mb-1 text-xs font-semibold uppercase tracking-wider text-accent">
             Real-World Context
           </p>
-          <p className="text-sm text-slate-300">{choice.feedback.realWorldContext}</p>
+          <p className="text-sm text-text-primary">{choice.feedback.realWorldContext}</p>
         </div>
         {optimalChoice && choice.quality !== 'optimal' && (
           <div className="rounded-lg border border-green-500/20 bg-green-500/5 p-4">
             <p className="mb-1 text-xs font-semibold uppercase tracking-wider text-green-400">
               Best Response
             </p>
-            <p className="text-sm text-slate-300">{optimalChoice.text}</p>
-            <p className="mt-2 text-sm text-slate-400">{optimalChoice.feedback.explanation}</p>
+            <p className="text-sm text-text-primary">{optimalChoice.text}</p>
+            <p className="mt-2 text-sm text-text-secondary">{optimalChoice.feedback.explanation}</p>
           </div>
         )}
       </div>

@@ -100,7 +100,7 @@ export function RadarChart() {
             key={i}
             points={points}
             fill="none"
-            stroke="#334155"
+            stroke="#E2DDD8"
             strokeWidth={0.5}
             opacity={0.6}
           />
@@ -114,7 +114,7 @@ export function RadarChart() {
             y1={CENTER}
             x2={point.x}
             y2={point.y}
-            stroke="#334155"
+            stroke="#E2DDD8"
             strokeWidth={0.5}
             opacity={0.6}
           />
@@ -128,7 +128,7 @@ export function RadarChart() {
               key={i}
               x={CENTER + 4}
               y={CENTER - r + 4}
-              fill="#64748b"
+              fill="#6D7C90"
               fontSize="10"
               fontFamily="var(--font-mono)"
             >
@@ -140,8 +140,8 @@ export function RadarChart() {
         {/* Data polygon */}
         <polygon
           points={dataPath}
-          fill="rgba(34, 197, 94, 0.2)"
-          stroke="#22c55e"
+          fill="rgba(204, 89, 89, 0.2)"
+          stroke="#CC5959"
           strokeWidth={2}
           style={{
             transition: "all 0.8s cubic-bezier(0.34, 1.56, 0.64, 1)",
@@ -155,8 +155,8 @@ export function RadarChart() {
             cx={point.x}
             cy={point.y}
             r={3.5}
-            fill="#22c55e"
-            stroke="#0f172a"
+            fill="#CC5959"
+            stroke="#FAF8F5"
             strokeWidth={1.5}
             style={{
               transition: "all 0.8s cubic-bezier(0.34, 1.56, 0.64, 1)",
@@ -171,7 +171,7 @@ export function RadarChart() {
             x={label.x}
             y={label.y}
             textAnchor={label.anchor}
-            fill="#94a3b8"
+            fill="#6D7C90"
             fontSize="16"
             fontFamily="var(--font-sans)"
           >
@@ -187,7 +187,7 @@ export function RadarChart() {
             <tspan
               x={label.x}
               dy={LINE_HEIGHT}
-              fill="#64748b"
+              fill="#6D7C90"
               fontFamily="var(--font-mono)"
               fontSize="13"
             >

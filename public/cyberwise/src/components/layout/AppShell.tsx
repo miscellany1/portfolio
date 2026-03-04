@@ -8,7 +8,7 @@ interface AppShellProps {
 }
 
 export const AppShell = ({ children }: AppShellProps) => (
-  <div className="flex min-h-screen flex-col bg-slate-950 text-slate-100">
+  <div className="flex min-h-screen flex-col bg-surface text-text-primary">
     <TopBar />
     <ProgressBar />
     <main className="flex-1">

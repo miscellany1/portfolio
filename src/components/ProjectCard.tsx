@@ -18,12 +18,12 @@ export default function ProjectCard({
       transition={{ duration: 0.4, delay: index * 0.15 }}
       className={
         featured
-          ? "flex flex-col h-full bg-slate-900 border border-amber-500/30 rounded-xl p-8 sm:p-10 hover:border-amber-500/50 transition-all hover:-translate-y-1 hover:shadow-lg hover:shadow-amber-500/10 relative overflow-hidden"
-          : "flex flex-col h-full bg-slate-900 border border-slate-800 rounded-xl p-6 sm:p-8 hover:border-slate-700 transition-all hover:-translate-y-1 hover:shadow-lg hover:shadow-green-500/10"
+          ? "flex flex-col h-full bg-surface-raised border border-accent-gold/30 rounded-xl p-8 sm:p-10 hover:border-accent-gold/50 transition-all hover:-translate-y-1 shadow-sm hover:shadow-md relative overflow-hidden"
+          : "flex flex-col h-full bg-surface-raised border border-border-subtle rounded-xl p-6 sm:p-8 hover:border-accent/30 transition-all hover:-translate-y-1 shadow-sm hover:shadow-md"
       }
     >
       {featured && (
-        <span className="absolute top-4 right-4 sm:top-6 sm:right-6 px-2.5 py-1 text-xs font-semibold uppercase tracking-wider bg-amber-500/10 text-amber-400 border border-amber-500/20 rounded-full">
+        <span className="absolute top-4 right-4 sm:top-6 sm:right-6 px-2.5 py-1 text-xs font-semibold uppercase tracking-wider bg-accent-gold/10 text-accent-gold border border-accent-gold/20 rounded-full">
           Featured
         </span>
       )}
@@ -32,8 +32,8 @@ export default function ProjectCard({
         <h3
           className={
             featured
-              ? "text-2xl sm:text-3xl font-semibold text-slate-100"
-              : "text-xl font-semibold text-slate-100"
+              ? "text-2xl sm:text-3xl font-semibold text-text-primary"
+              : "text-xl font-semibold text-text-primary"
           }
         >
           {project.title}
@@ -41,8 +41,8 @@ export default function ProjectCard({
         <p
           className={
             featured
-              ? "text-sm sm:text-base text-slate-500 mt-1"
-              : "text-sm text-slate-500 mt-1"
+              ? "text-sm sm:text-base text-text-secondary mt-1"
+              : "text-sm text-text-secondary mt-1"
           }
         >
           {project.subtitle}
@@ -52,8 +52,8 @@ export default function ProjectCard({
       <p
         className={
           featured
-            ? "text-slate-400 leading-relaxed mb-6 sm:text-lg sm:leading-relaxed max-w-2xl"
-            : "text-slate-400 leading-relaxed mb-6"
+            ? "text-text-secondary leading-relaxed mb-6 sm:text-lg sm:leading-relaxed max-w-2xl"
+            : "text-text-secondary leading-relaxed mb-6"
         }
       >
         {project.description}
@@ -61,14 +61,14 @@ export default function ProjectCard({
 
       <div className={featured ? "sm:flex sm:gap-10 mb-6" : "mb-6"}>
         <div className={featured ? "mb-6 sm:mb-0" : ""}>
-          <h4 className="text-xs font-semibold text-slate-500 uppercase tracking-wide mb-3">
+          <h4 className="text-xs font-semibold text-text-secondary uppercase tracking-wide mb-3">
             Demonstrated Skills
           </h4>
           <ul className="space-y-1.5">
             {project.skills.map((skill) => (
               <li key={skill} className="flex items-center gap-2 text-sm">
                 <svg
-                  className="w-4 h-4 text-green-400 shrink-0"
+                  className="w-4 h-4 text-accent-jade shrink-0"
                   fill="none"
                   viewBox="0 0 24 24"
                   stroke="currentColor"
@@ -80,7 +80,7 @@ export default function ProjectCard({
                     d="M5 13l4 4L19 7"
                   />
                 </svg>
-                <span className="text-slate-300">{skill}</span>
+                <span className="text-text-primary">{skill}</span>
               </li>
             ))}
           </ul>
@@ -90,7 +90,7 @@ export default function ProjectCard({
           <h4
             className={
               featured
-                ? "text-xs font-semibold text-slate-500 uppercase tracking-wide mb-3"
+                ? "text-xs font-semibold text-text-secondary uppercase tracking-wide mb-3"
                 : "sr-only"
             }
           >
@@ -100,7 +100,7 @@ export default function ProjectCard({
             {project.tech.map((t) => (
               <span
                 key={t}
-                className="px-2.5 py-1 text-xs font-medium font-mono bg-slate-800 text-slate-400 rounded-md"
+                className="px-2.5 py-1 text-xs font-medium font-mono bg-surface-overlay text-text-secondary border border-border-subtle rounded-md"
               >
                 {t}
               </span>
@@ -115,8 +115,8 @@ export default function ProjectCard({
         rel="noopener noreferrer"
         className={
           featured
-            ? "mt-auto self-start inline-flex items-center gap-2 px-6 py-3 bg-amber-600 hover:bg-amber-700 text-white text-sm font-medium rounded-lg transition-colors"
-            : "mt-auto self-start inline-flex items-center gap-2 px-5 py-2.5 bg-green-600 hover:bg-green-700 text-white text-sm font-medium rounded-lg transition-colors"
+            ? "mt-auto self-start inline-flex items-center gap-2 px-6 py-3 bg-accent-gold hover:bg-accent-gold-hover text-text-primary text-sm font-medium rounded-lg transition-colors"
+            : "mt-auto self-start inline-flex items-center gap-2 px-5 py-2.5 bg-accent hover:bg-accent-hover text-white text-sm font-medium rounded-lg transition-colors"
         }
       >
         {project.linkLabel ?? "View Project"}

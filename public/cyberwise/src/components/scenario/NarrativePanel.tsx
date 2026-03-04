@@ -51,7 +51,7 @@ export const NarrativePanel = ({ text }: NarrativePanelProps) => {
 
   return (
     <motion.div
-      className={`relative rounded-lg border border-slate-700/50 bg-slate-800/60 p-5 ${
+      className={`relative rounded-lg border border-border-subtle bg-surface-raised p-5 shadow-sm ${
         isComplete ? 'cursor-default' : 'cursor-pointer'
       }`}
       initial={{ opacity: 0 }}
@@ -64,18 +64,18 @@ export const NarrativePanel = ({ text }: NarrativePanelProps) => {
         if (e.key === 'Enter' || e.key === ' ') skipToEnd();
       }}
     >
-      <p className="whitespace-pre-line text-sm leading-relaxed text-slate-200 md:text-base">
+      <p className="whitespace-pre-line text-sm leading-relaxed text-text-primary md:text-base">
         {displayedText}
         {!isComplete && (
           <motion.span
-            className="inline-block w-0.5 h-4 bg-blue-400 ml-0.5 align-middle"
+            className="inline-block w-0.5 h-4 bg-accent ml-0.5 align-middle"
             animate={{ opacity: [1, 0] }}
             transition={{ duration: 0.5, repeat: Infinity }}
           />
         )}
       </p>
       {!isComplete && (
-        <span className="absolute bottom-2 right-3 text-xs text-slate-400">
+        <span className="absolute bottom-2 right-3 text-xs text-text-secondary">
           click to skip
         </span>
       )}

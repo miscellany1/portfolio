@@ -9,19 +9,19 @@ export function Hero() {
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.5 }}
       >
-        <h1 className="text-4xl sm:text-5xl font-bold text-white tracking-tight">
+        <h1 className="text-4xl sm:text-5xl font-bold text-text-primary tracking-tight">
           Course Evaluation
           <br />
-          <span className="text-green-400">Framework</span>
+          <span className="text-accent">Framework</span>
         </h1>
-        <p className="mt-4 text-lg text-slate-400 max-w-2xl mx-auto">
+        <p className="mt-4 text-lg text-text-secondary max-w-2xl mx-auto">
           A systematic rubric for evaluating instructional quality across content
           alignment, design, learner experience, technical quality, and
           compliance.
         </p>
         <Link
           to="/evaluate"
-          className="mt-8 inline-flex items-center gap-2 px-6 py-3 bg-green-600 hover:bg-green-700 text-white font-medium rounded-lg transition-colors"
+          className="mt-8 inline-flex items-center gap-2 px-6 py-3 bg-accent hover:bg-accent-hover text-white font-medium rounded-lg transition-colors"
         >
           Start Evaluation
           <svg

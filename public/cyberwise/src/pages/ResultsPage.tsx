@@ -38,11 +38,11 @@ export const ResultsPage = () => {
         initial={{ opacity: 0, y: 20 }}
         animate={{ opacity: 1, y: 0 }}
       >
-        <p className="text-sm font-semibold uppercase tracking-wider text-blue-400">
+        <p className="text-sm font-semibold uppercase tracking-wider text-accent">
           Week Complete
         </p>
-        <h1 className="text-3xl font-bold text-slate-100">Your Security Report Card</h1>
-        <p className="text-sm text-slate-400">
+        <h1 className="text-3xl font-bold text-text-primary">Your Security Report Card</h1>
+        <p className="text-sm text-text-secondary">
           Here's how you performed during your first week at NovaTech.
         </p>
       </motion.div>
@@ -57,11 +57,11 @@ export const ResultsPage = () => {
         <SecurityScoreGauge score={securityScore} size="lg" />
         <div className="w-48 space-y-4">
           <TrustLevel trust={trustLevel} />
-          <div className="rounded-lg border border-slate-700/50 bg-slate-800/50 p-4 text-center">
-            <p className="text-xs font-semibold uppercase tracking-wider text-slate-400">
+          <div className="rounded-lg border border-border-subtle bg-surface-raised p-4 text-center shadow-sm">
+            <p className="text-xs font-semibold uppercase tracking-wider text-text-secondary">
               Decisions Made
             </p>
-            <p className="text-2xl font-bold font-mono text-slate-200">{choiceHistory.length}</p>
+            <p className="text-2xl font-bold font-mono text-text-primary">{choiceHistory.length}</p>
           </div>
         </div>
       </motion.div>

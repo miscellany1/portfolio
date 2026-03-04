@@ -10,7 +10,7 @@ export const ProgressBar = () => {
   if (!gameStarted) return null;
 
   return (
-    <div className="border-b border-slate-800/50 bg-slate-900/50">
+    <div className="border-b border-border-subtle/50 bg-surface-overlay/50">
       <div className="mx-auto flex max-w-5xl items-center gap-1 px-4 py-2">
         {DAY_ORDER.map((day, i) => {
           const isCompleted = completedDays.includes(day);
@@ -22,18 +22,18 @@ export const ProgressBar = () => {
                 <span
                   className={`text-xs font-medium uppercase tracking-wide ${
                     isCurrent
-                      ? 'text-blue-400'
+                      ? 'text-accent'
                       : isCompleted
                         ? 'text-green-400'
-                        : 'text-slate-400'
+                        : 'text-text-secondary'
                   }`}
                 >
                   {DAY_LABELS[day].slice(0, 3)}
                 </span>
-                <div className="h-1.5 w-full overflow-hidden rounded-full bg-slate-800">
+                <div className="h-1.5 w-full overflow-hidden rounded-full bg-border-subtle">
                   <motion.div
                     className={`h-full rounded-full ${
-                      isCompleted ? 'bg-green-500' : isCurrent ? 'bg-blue-500' : 'bg-slate-700'
+                      isCompleted ? 'bg-green-500' : isCurrent ? 'bg-accent' : 'bg-border-subtle'
                     }`}
                     initial={{ width: '0%' }}
                     animate={{ width: isCompleted ? '100%' : isCurrent ? '50%' : '0%' }}
@@ -43,7 +43,7 @@ export const ProgressBar = () => {
               </div>
               {i < DAY_ORDER.length - 1 && (
                 <div
-                  className={`mx-1 h-px w-4 ${isCompleted ? 'bg-green-500/50' : 'bg-slate-800'}`}
+                  className={`mx-1 h-px w-4 ${isCompleted ? 'bg-green-500/50' : 'bg-border-subtle'}`}
                 />
               )}
             </div>

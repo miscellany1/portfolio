@@ -21,17 +21,17 @@ export const TrustLevel = ({ trust }: TrustLevelProps) => {
   return (
     <div className="flex flex-col gap-1.5">
       <div className="flex items-center justify-between">
-        <span className="text-xs font-medium text-slate-400">Trust Level</span>
-        <span className="text-xs font-mono text-slate-300">{animatedTrust}%</span>
+        <span className="text-xs font-medium text-text-secondary">Trust Level</span>
+        <span className="text-xs font-mono text-text-primary">{animatedTrust}%</span>
       </div>
-      <div className="h-2 w-full overflow-hidden rounded-full bg-slate-800">
+      <div className="h-2 w-full overflow-hidden rounded-full bg-border-subtle">
         <motion.div
           className={`h-full rounded-full ${getColor(animatedTrust)}`}
           animate={{ width: `${animatedTrust}%` }}
           transition={{ type: 'spring', damping: 20, stiffness: 80 }}
         />
       </div>
-      <span className="text-xs font-medium text-slate-400">{label}</span>
+      <span className="text-xs font-medium text-text-secondary">{label}</span>
     </div>
   );
 };
