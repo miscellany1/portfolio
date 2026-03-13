@@ -19,7 +19,7 @@ export default function ProjectCard({
       className={
         featured
           ? "flex flex-col h-full bg-surface-raised border border-accent-gold/30 rounded-xl p-8 sm:p-10 hover:border-accent-gold/50 transition-all hover:-translate-y-1 shadow-sm hover:shadow-md relative overflow-hidden"
-          : "flex flex-col h-full bg-surface-raised border border-border-subtle rounded-xl p-6 sm:p-8 hover:border-accent/30 transition-all hover:-translate-y-1 shadow-sm hover:shadow-md"
+          : "flex flex-col h-full bg-surface-raised border border-border-subtle rounded-xl p-5 sm:p-6 hover:border-accent/30 transition-all hover:-translate-y-1 shadow-sm hover:shadow-md"
       }
     >
       {featured && (
@@ -109,31 +109,58 @@ export default function ProjectCard({
         </div>
       </div>
 
-      <a
-        href={project.demoUrl}
-        target="_blank"
-        rel="noopener noreferrer"
-        className={
-          featured
-            ? "mt-auto self-start inline-flex items-center gap-2 px-6 py-3 bg-accent-gold hover:bg-accent-gold-hover text-text-primary text-sm font-medium rounded-lg transition-colors"
-            : "mt-auto self-start inline-flex items-center gap-2 px-5 py-2.5 bg-accent hover:bg-accent-hover text-white text-sm font-medium rounded-lg transition-colors"
-        }
-      >
-        {project.linkLabel ?? "View Project"}
-        <svg
-          className="w-4 h-4"
-          fill="none"
-          viewBox="0 0 24 24"
-          stroke="currentColor"
-          strokeWidth={2}
+      <div className="mt-auto self-start flex flex-wrap items-center gap-3">
+        <a
+          href={project.demoUrl}
+          target="_blank"
+          rel="noopener noreferrer"
+          className={
+            featured
+              ? "inline-flex items-center gap-2 px-6 py-3 bg-accent-gold hover:bg-accent-gold-hover text-text-primary text-sm font-medium rounded-lg transition-colors"
+              : "inline-flex items-center gap-2 px-5 py-2.5 bg-accent hover:bg-accent-hover text-white text-sm font-medium rounded-lg transition-colors"
+          }
         >
-          <path
-            strokeLinecap="round"
-            strokeLinejoin="round"
-            d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"
-          />
-        </svg>
-      </a>
+          {project.linkLabel ?? "View Project"}
+          <svg
+            className="w-4 h-4"
+            fill="none"
+            viewBox="0 0 24 24"
+            stroke="currentColor"
+            strokeWidth={2}
+          >
+            <path
+              strokeLinecap="round"
+              strokeLinejoin="round"
+              d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"
+            />
+          </svg>
+        </a>
+        {project.caseStudyUrl && (
+          <a
+            href={project.caseStudyUrl}
+            className={
+              featured
+                ? "inline-flex items-center gap-2 px-6 py-3 border border-accent-gold/40 hover:border-accent-gold text-accent-gold text-sm font-medium rounded-lg transition-colors"
+                : "inline-flex items-center gap-2 px-5 py-2.5 border border-border-subtle hover:border-accent text-text-secondary hover:text-text-primary text-sm font-medium rounded-lg transition-colors"
+            }
+          >
+            View Process
+            <svg
+              className="w-4 h-4"
+              fill="none"
+              viewBox="0 0 24 24"
+              stroke="currentColor"
+              strokeWidth={2}
+            >
+              <path
+                strokeLinecap="round"
+                strokeLinejoin="round"
+                d="M9 5l7 7-7 7"
+              />
+            </svg>
+          </a>
+        )}
+      </div>
     </motion.div>
   );
 }

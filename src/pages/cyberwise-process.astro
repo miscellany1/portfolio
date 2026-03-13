@@ -1,0 +1,492 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+import CaseStudyNav from "../components/CaseStudyNav.astro";
+import CaseStudyFooter from "../components/CaseStudyFooter.astro";
+import SectionReveal from "../components/SectionReveal.tsx";
+---
+
+<BaseLayout
+  title="CyberWise - Process Case Study | Liam Sheehan"
+  description="A deep dive into the design and build process behind CyberWise, a gamified cybersecurity awareness training built from scratch with React."
+>
+  <CaseStudyNav />
+
+  <main>
+    <!-- Hero -->
+    <section class="relative bg-surface-overlay py-20 sm:py-28 border-b border-border-subtle">
+      <div class="absolute inset-0 opacity-[0.03]">
+        <div class="absolute inset-0" style="background-image: radial-gradient(circle at 1px 1px, var(--color-text-primary) 1px, transparent 0); background-size: 40px 40px;"></div>
+      </div>
+      <div class="relative z-10 max-w-5xl mx-auto px-4 sm:px-6">
+        <a href="/" class="inline-block text-sm text-text-secondary hover:text-text-primary mb-6 transition-colors">&larr; Back to Portfolio</a>
+        <div class="flex items-center gap-3 mb-6">
+          <span class="font-mono text-sm tracking-wider text-accent-gold uppercase">Case Study</span>
+          <span class="w-12 h-px bg-accent-gold/50"></span>
+        </div>
+        <h1 class="font-serif text-3xl sm:text-4xl lg:text-5xl text-text-primary mb-4 leading-tight">
+          CyberWise: Building a Gamified Cybersecurity Training from Scratch
+        </h1>
+        <p class="text-text-secondary text-base sm:text-lg max-w-3xl leading-relaxed mb-10">
+          A custom React application that teaches cybersecurity fundamentals through five days of branching scenarios at a fictional company. Built to demonstrate that effective security training can feel like a game without sacrificing instructional rigor.
+        </p>
+        <div class="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-6 gap-3">
+          <div class="bg-surface-raised border border-border-subtle rounded-lg p-4 text-center shadow-sm">
+            <p class="text-xs text-text-secondary uppercase tracking-wider mb-1">Timeline</p>
+            <p class="text-text-primary font-semibold text-sm">~2 Weeks</p>
+          </div>
+          <div class="bg-surface-raised border border-border-subtle rounded-lg p-4 text-center shadow-sm">
+            <p class="text-xs text-text-secondary uppercase tracking-wider mb-1">Type</p>
+            <p class="text-text-primary font-semibold text-sm">Custom Build</p>
+          </div>
+          <div class="bg-surface-raised border border-border-subtle rounded-lg p-4 text-center shadow-sm">
+            <p class="text-xs text-text-secondary uppercase tracking-wider mb-1">Stack</p>
+            <p class="text-text-primary font-semibold text-sm">React + TypeScript</p>
+          </div>
+          <div class="bg-surface-raised border border-border-subtle rounded-lg p-4 text-center shadow-sm">
+            <p class="text-xs text-text-secondary uppercase tracking-wider mb-1">Scenarios</p>
+            <p class="text-text-primary font-semibold text-sm">5 Days, 20+ Steps</p>
+          </div>
+          <div class="bg-surface-raised border border-border-subtle rounded-lg p-4 text-center shadow-sm">
+            <p class="text-xs text-text-secondary uppercase tracking-wider mb-1">AI-Assisted</p>
+            <p class="text-text-primary font-semibold text-sm">Claude for Dev</p>
+          </div>
+          <div class="bg-surface-raised border border-border-subtle rounded-lg p-4 text-center shadow-sm">
+            <p class="text-xs text-text-secondary uppercase tracking-wider mb-1">Achievements</p>
+            <p class="text-text-primary font-semibold text-sm">10 Unlockable</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Section 1: The Problem I Was Solving -->
+    <section class="py-16 sm:py-20 bg-surface">
+      <div class="max-w-5xl mx-auto px-4 sm:px-6">
+        <SectionReveal client:visible>
+          <h2 class="font-serif text-2xl sm:text-3xl text-text-primary mb-6">The Problem I Was Solving</h2>
+          <div class="text-text-secondary leading-relaxed space-y-6 max-w-3xl">
+            <p>
+              Cybersecurity awareness training is one of the hardest briefs in L&D. The subject matter is technical, the compliance requirements are rigid, and the timelines rarely leave room for the kind of interactivity that actually changes behavior. The people building this training are doing skilled work under real constraints, and the results reflect those constraints more than any lack of talent.
+            </p>
+            <p>
+              But I kept thinking about what becomes possible when you remove those constraints. What if you could start from a blank canvas, with no LMS packaging requirements or seat-time mandates, and build a cybersecurity training that felt like something people would <em>choose</em> to engage with? I have a longstanding belief that the mechanics games use to teach players complex systems (progression, consequence, feedback loops) are exactly what workplace training needs more of. CyberWise was my chance to put that belief into practice.
+            </p>
+            <p>
+              The idea was straightforward: place learners inside realistic threat scenarios, let their decisions carry visible consequences, and build the kind of pattern recognition that actually transfers to the real world. But behind that idea was a broader argument I wanted to make: that game design isn't a novelty layer you add on top of training. It's a design discipline with decades of research on motivation, difficulty curves, and knowledge transfer, and it belongs at the center of how we think about learning experiences.
+            </p>
+
+            <p>
+              I set out to build something that demonstrated this on every level.
+            </p>
+          </div>
+        </SectionReveal>
+      </div>
+    </section>
+
+    <!-- Section 2: Instructional Design Approach -->
+    <section class="py-16 sm:py-20 bg-surface-overlay">
+      <div class="max-w-5xl mx-auto px-4 sm:px-6">
+        <SectionReveal client:visible>
+          <h2 class="font-serif text-2xl sm:text-3xl text-text-primary mb-6">Instructional Design Approach</h2>
+
+          <h3 class="text-lg font-semibold text-text-primary mb-4">Bloom's Taxonomy Progression</h3>
+          <p class="text-text-secondary leading-relaxed mb-6 max-w-3xl">
+            Each day of the training maps to a progressively higher cognitive level, creating a deliberate difficulty curve that mirrors how real security knowledge develops: you learn to recognize threats before you're asked to respond to them.
+          </p>
+
+          <div class="relative mb-10">
+            <!-- Progression arrow (visible on sm+ screens) -->
+            <div class="hidden sm:block absolute top-1/2 left-0 right-0 -translate-y-1/2 z-0 px-8">
+              <div class="h-px w-full bg-gradient-to-r from-accent/20 via-accent-gold/40 to-accent-jade/60"></div>
+            </div>
+            <div class="grid grid-cols-1 sm:grid-cols-5 gap-3 relative z-10">
+              <div class="bg-surface-raised border border-border-subtle rounded-xl p-4 text-center">
+                <p class="text-xs font-semibold text-accent uppercase tracking-wide mb-1">Monday</p>
+                <p class="text-sm font-semibold text-text-primary">Knowledge</p>
+                <p class="text-xs text-text-secondary mt-1">Identify phishing</p>
+              </div>
+              <div class="bg-surface-raised border border-border-subtle rounded-xl p-4 text-center">
+                <p class="text-xs font-semibold text-accent uppercase tracking-wide mb-1">Tuesday</p>
+                <p class="text-sm font-semibold text-text-primary">Comprehension</p>
+                <p class="text-xs text-text-secondary mt-1">Explain social engineering</p>
+              </div>
+              <div class="bg-surface-raised border border-border-subtle rounded-xl p-4 text-center">
+                <p class="text-xs font-semibold text-accent uppercase tracking-wide mb-1">Wednesday</p>
+                <p class="text-sm font-semibold text-text-primary">Application</p>
+                <p class="text-xs text-text-secondary mt-1">Apply physical security</p>
+              </div>
+              <div class="bg-surface-raised border border-border-subtle rounded-xl p-4 text-center">
+                <p class="text-xs font-semibold text-accent uppercase tracking-wide mb-1">Thursday</p>
+                <p class="text-sm font-semibold text-text-primary">Analysis</p>
+                <p class="text-xs text-text-secondary mt-1">Analyze data handling</p>
+              </div>
+              <div class="bg-surface-raised border border-border-subtle rounded-xl p-4 text-center">
+                <p class="text-xs font-semibold text-accent uppercase tracking-wide mb-1">Friday</p>
+                <p class="text-sm font-semibold text-text-primary">Evaluation</p>
+                <p class="text-xs text-text-secondary mt-1">Evaluate incident response</p>
+              </div>
+            </div>
+          </div>
+
+          <h3 class="text-lg font-semibold text-text-primary mb-4">Core Design Decisions</h3>
+          <div class="space-y-6 max-w-3xl">
+            <div class="border-l-2 border-accent-gold pl-4">
+              <p class="font-semibold text-text-primary mb-1">Three-part feedback on every choice.</p>
+              <p class="text-text-secondary leading-relaxed">Every decision triggers a quality rating with score impact, an instructional explanation of the principle at play, and a real-world context section connecting to actual breaches and statistics. The learner always knows what they got right, why it matters, and where it's happened in the real world.</p>
+            </div>
+            <div class="border-l-2 border-accent-gold pl-4">
+              <p class="font-semibold text-text-primary mb-1">Branching consequences, not just feedback.</p>
+              <p class="text-text-secondary leading-relaxed">Poor or dangerous choices don't just dock points. They route the learner into consequence branches that show the fallout of their decision, then return them to the main path. Forward a phishing email to a coworker? You'll deal with the aftermath before moving on.</p>
+            </div>
+            <div class="border-l-2 border-accent-gold pl-4">
+              <p class="font-semibold text-text-primary mb-1">Dual-metric scoring: Security Score + Trust Level.</p>
+              <p class="text-text-secondary leading-relaxed">Security Score tracks technical correctness. Trust Level tracks professional judgment and how your manager perceives you. Both start mid-range (75 and 50 respectively), and poor trust can lock you out of optimal choices later in the week. This mirrors how real workplace credibility works: bad decisions compound.</p>
+            </div>
+            <div class="border-l-2 border-accent-gold pl-4">
+              <p class="font-semibold text-text-primary mb-1">Trust-gated choices.</p>
+              <p class="text-text-secondary leading-relaxed">Some optimal responses on Thursday and Friday require a minimum trust level to unlock. If the learner has burned too much credibility earlier in the week, those options appear locked. This mechanically reinforces a core lesson: your track record determines your options.</p>
+            </div>
+            <div class="border-l-2 border-accent-gold pl-4">
+              <p class="font-semibold text-text-primary mb-1">Merrill's First Principles of Instruction.</p>
+              <p class="text-text-secondary leading-relaxed">New knowledge is activated through realistic problems, demonstrated through simulation, applied through decision-making, and integrated through feedback that connects to real-world incidents. The learner isn't told about phishing, they experience catching (or missing) a phishing email.</p>
+            </div>
+          </div>
+        </SectionReveal>
+      </div>
+    </section>
+
+    <!-- Section 3: Game Design & Mechanics -->
+    <section class="py-16 sm:py-20 bg-surface">
+      <div class="max-w-5xl mx-auto px-4 sm:px-6">
+        <SectionReveal client:visible>
+          <h2 class="font-serif text-2xl sm:text-3xl text-text-primary mb-6">Game Design & Mechanics</h2>
+
+          <p class="text-text-secondary leading-relaxed mb-8 max-w-3xl">
+            The learner plays as a new Security Analyst at NovaTech Industries, navigating their first week on the job. Each day presents a different category of cybersecurity threat through 4 scenario steps with 4 choices each. The narrative framing creates immersion while the game systems reinforce learning.
+          </p>
+
+          <div class="grid grid-cols-1 sm:grid-cols-2 gap-6 mb-10 max-w-3xl">
+            <div class="bg-surface-raised border border-border-subtle rounded-xl p-6">
+              <h4 class="text-xs font-semibold text-text-secondary uppercase tracking-wide mb-3">Scoring System</h4>
+              <ul class="space-y-2 text-sm text-text-secondary">
+                <li><span class="text-green-500 font-semibold">Optimal:</span> +5 score, +5 trust</li>
+                <li><span class="text-yellow-500 font-semibold">Acceptable:</span> +2 score, +2 trust</li>
+                <li><span class="text-orange-500 font-semibold">Poor:</span> -5 score, -3 trust</li>
+                <li><span class="text-red-500 font-semibold">Dangerous:</span> -10 score, -8 trust</li>
+              </ul>
+            </div>
+            <div class="bg-surface-raised border border-border-subtle rounded-xl p-6">
+              <h4 class="text-xs font-semibold text-text-secondary uppercase tracking-wide mb-3">Ending Tiers</h4>
+              <ul class="space-y-2 text-sm text-text-secondary">
+                <li><span class="text-accent-jade font-semibold">Champion (80-100):</span> Recognized at all-hands, invited to Security Ambassador program</li>
+                <li><span class="text-accent-gold font-semibold">Getting There (50-79):</span> Enrolled in additional security training</li>
+                <li><span class="text-accent font-semibold">Compromised (0-49):</span> Placed on performance improvement plan</li>
+              </ul>
+            </div>
+          </div>
+
+          <h3 class="text-lg font-semibold text-text-primary mb-4">Trust Penalty Mechanic</h3>
+          <p class="text-text-secondary leading-relaxed mb-8 max-w-3xl">
+            If the player's final trust drops below 20, their ending is downgraded one tier. A Champion becomes Getting There. Getting There becomes Compromised. The downgraded ending includes additional narrative about trust erosion, reinforcing that technical competence alone isn't enough.
+          </p>
+
+          <h3 class="text-lg font-semibold text-text-primary mb-4">Achievements (10 Total)</h3>
+          <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 max-w-3xl">
+            <div class="bg-surface-raised border border-border-subtle rounded-lg p-4">
+              <p class="text-xs font-semibold text-accent-gold uppercase tracking-wide mb-2">Trigger-Based (5)</p>
+              <ul class="space-y-1.5 text-sm text-text-secondary">
+                <li><strong class="text-text-primary">Eagle Eye</strong> - Catch the first phishing email</li>
+                <li><strong class="text-text-primary">Social Shield</strong> - Resist IT impersonation</li>
+                <li><strong class="text-text-primary">Clean Desk Champion</strong> - Secure your workstation</li>
+                <li><strong class="text-text-primary">Data Guardian</strong> - Classify data correctly</li>
+                <li><strong class="text-text-primary">First Responder</strong> - Handle first incident alert</li>
+              </ul>
+            </div>
+            <div class="bg-surface-raised border border-border-subtle rounded-lg p-4">
+              <p class="text-xs font-semibold text-accent-gold uppercase tracking-wide mb-2">Computed (5)</p>
+              <ul class="space-y-1.5 text-sm text-text-secondary">
+                <li><strong class="text-text-primary">Security Champion</strong> - Final score 80+</li>
+                <li><strong class="text-text-primary">Perfect Day</strong> - All optimal in a single day</li>
+                <li><strong class="text-text-primary">Trust Builder</strong> - Reach 80+ trust</li>
+                <li><strong class="text-text-primary">Quick Learner</strong> - Optimal right after a mistake</li>
+                <li><strong class="text-text-primary">Zero Incidents</strong> - No dangerous choices all week</li>
+              </ul>
+            </div>
+          </div>
+        </SectionReveal>
+      </div>
+    </section>
+
+    <!-- Section 4: Simulation Design -->
+    <section class="py-16 sm:py-20 bg-surface-overlay">
+      <div class="max-w-5xl mx-auto px-4 sm:px-6">
+        <SectionReveal client:visible>
+          <h2 class="font-serif text-2xl sm:text-3xl text-text-primary mb-6">Simulation Design</h2>
+          <p class="text-text-secondary leading-relaxed mb-8 max-w-3xl">
+            Each day uses a different simulated interface to deliver its scenarios. This prevents visual fatigue across five days of content and reinforces the idea that threats show up in different channels. The simulations use a dark slate theme to create the feeling of looking at a screen within the screen.
+          </p>
+
+          <div class="grid grid-cols-1 sm:grid-cols-2 gap-6 max-w-3xl">
+            <div class="bg-surface-dark border border-white/10 rounded-xl p-6">
+              <div class="flex items-center gap-2 mb-3">
+                <div class="flex gap-1.5">
+                  <span class="w-2.5 h-2.5 rounded-full bg-red-500"></span>
+                  <span class="w-2.5 h-2.5 rounded-full bg-yellow-500"></span>
+                  <span class="w-2.5 h-2.5 rounded-full bg-green-500"></span>
+                </div>
+                <span class="text-xs text-gray-400 font-mono ml-2">Email Client</span>
+              </div>
+              <p class="text-xs font-semibold text-accent uppercase tracking-wide mb-1">Monday</p>
+              <p class="text-sm text-gray-300">Dark-themed inbox with sender details, subject lines, attachment badges, and "SUSPICIOUS" tags for phishing emails. Used for phishing detection scenarios.</p>
+            </div>
+            <div class="bg-surface-dark border border-white/10 rounded-xl p-6">
+              <div class="flex items-center gap-2 mb-3">
+                <span class="w-2.5 h-2.5 rounded-full bg-green-500 animate-pulse"></span>
+                <span class="text-xs text-gray-400 font-mono ml-2">Phone Call</span>
+              </div>
+              <p class="text-xs font-semibold text-accent uppercase tracking-wide mb-1">Tuesday</p>
+              <p class="text-sm text-gray-300">Active call interface with caller info, pulsing indicator, and indented transcript lines. Used for social engineering scenarios where the threat comes through voice.</p>
+            </div>
+            <div class="bg-surface-dark border border-white/10 rounded-xl p-6">
+              <div class="flex items-center gap-2 mb-3">
+                <span class="w-6 h-6 rounded bg-blue-500/20 flex items-center justify-center">
+                  <span class="text-blue-400 text-xs">!</span>
+                </span>
+                <span class="text-xs text-gray-400 font-mono ml-2">Desktop View</span>
+              </div>
+              <p class="text-xs font-semibold text-accent uppercase tracking-wide mb-1">Wednesday</p>
+              <p class="text-sm text-gray-300">Workstation screen with notification cards (info, warning, error, USB) each with distinct colors and icons. Used for physical security scenarios.</p>
+            </div>
+            <div class="bg-surface-dark border border-white/10 rounded-xl p-6">
+              <div class="flex items-center gap-2 mb-3">
+                <span class="w-6 h-6 rounded bg-accent-jade/20 flex items-center justify-center">
+                  <span class="text-accent-jade text-xs">#</span>
+                </span>
+                <span class="text-xs text-gray-400 font-mono ml-2">Chat Window</span>
+              </div>
+              <p class="text-xs font-semibold text-accent uppercase tracking-wide mb-1">Thursday</p>
+              <p class="text-sm text-gray-300">Slack-style interface with colored avatars, sender names, timestamps, and message bubbles. Used for data handling scenarios where threats appear in team communication.</p>
+            </div>
+          </div>
+
+          <div class="mt-6 max-w-3xl">
+            <p class="text-sm text-text-secondary">
+              <strong class="text-text-primary">Friday</strong> uses a mixed simulation renderer that combines all four formats, reflecting how real incident response draws from multiple channels simultaneously.
+            </p>
+          </div>
+        </SectionReveal>
+      </div>
+    </section>
+
+    <!-- Section 5: Technical Architecture -->
+    <section class="py-16 sm:py-20 bg-surface">
+      <div class="max-w-5xl mx-auto px-4 sm:px-6">
+        <SectionReveal client:visible>
+          <h2 class="font-serif text-2xl sm:text-3xl text-text-primary mb-6">Technical Architecture</h2>
+
+          <p class="text-text-secondary leading-relaxed mb-4 max-w-3xl">
+            CyberWise is a fully static single-page application with no backend. All game state persists to localStorage via Zustand, and the app deploys as a subfolder of any static site. This was a deliberate choice: the training needs to be hostable anywhere without server dependencies.
+          </p>
+          <p class="text-text-secondary leading-relaxed mb-8 max-w-3xl">
+            The architecture separates concerns cleanly: pure game logic lives in <code class="font-mono text-xs bg-surface-overlay px-1.5 py-0.5 rounded">game/</code>, scenario content lives in <code class="font-mono text-xs bg-surface-overlay px-1.5 py-0.5 rounded">data/</code>, and React components handle rendering. Adding a new day of content means adding a new scenario file without touching game logic or UI code.
+          </p>
+
+          <h3 class="text-lg font-semibold text-text-primary mb-4">Key Technical Decisions</h3>
+          <div class="space-y-6 max-w-3xl">
+            <div class="border-l-2 border-accent-gold pl-4">
+              <p class="font-semibold text-text-primary mb-1">State persistence.</p>
+              <p class="text-text-secondary leading-relaxed">Zustand with localStorage means learners can close the tab and pick up where they left off. Choice history, scores, achievements, and current progress all survive between sessions. An undo system reverses score changes when learners use the back button.</p>
+            </div>
+            <div class="border-l-2 border-accent-gold pl-4">
+              <p class="font-semibold text-text-primary mb-1">Scenario engine.</p>
+              <p class="text-text-secondary leading-relaxed">A central hook handles all game logic: processing choices, routing into consequence branches, advancing steps, and shuffling choice order to prevent positional pattern-learning (no more "always pick A").</p>
+            </div>
+            <div class="border-l-2 border-accent-gold pl-4">
+              <p class="font-semibold text-text-primary mb-1">Simulation rendering.</p>
+              <p class="text-text-secondary leading-relaxed">A polymorphic renderer routes to the correct simulated interface (email, chat, phone, desktop) based on scenario type. Friday's mixed type combines multiple formats in a single step, mirroring how real incident response pulls from multiple channels.</p>
+            </div>
+            <div class="border-l-2 border-accent-gold pl-4">
+              <p class="font-semibold text-text-primary mb-1">Animation and pacing.</p>
+              <p class="text-text-secondary leading-relaxed">Framer Motion handles page transitions, micro-interactions, achievement toasts, and a red flash overlay on dangerous choices. Narrative text uses a typewriter effect at 18ms per character with click-to-skip, creating pacing without forcing the learner to wait.</p>
+            </div>
+          </div>
+
+          <details class="mt-10 max-w-3xl group">
+            <summary class="cursor-pointer text-sm font-semibold text-text-secondary hover:text-text-primary transition-colors flex items-center gap-2">
+              <svg class="w-4 h-4 transition-transform group-open:rotate-90" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M9 5l7 7-7 7" />
+              </svg>
+              Component Architecture
+            </summary>
+            <div class="bg-surface-raised border border-border-subtle rounded-xl p-6 mt-3 font-mono text-sm text-text-secondary">
+              <p class="text-accent-gold mb-2">// Layout layer</p>
+              <p class="ml-2">AppShell (TopBar + ProgressBar + AchievementPopup)</p>
+              <p class="text-accent-gold mb-2 mt-4">// Page layer (7 routes)</p>
+              <p class="ml-2">LandingPage, ObjectivesPage, DaySelectPage,</p>
+              <p class="ml-2">ScenarioPage, DayTransitionPage, ResultsPage, AboutPage</p>
+              <p class="text-accent-gold mb-2 mt-4">// Simulation renderers</p>
+              <p class="ml-2">EmailClient, ChatWindow, PhoneCall, DesktopView</p>
+              <p class="text-accent-gold mb-2 mt-4">// HUD components</p>
+              <p class="ml-2">SecurityScoreGauge (SVG), TrustLevel (bar), AchievementPopup</p>
+              <p class="text-accent-gold mb-2 mt-4">// Interaction components</p>
+              <p class="ml-2">NarrativePanel, ChoiceCard, FeedbackPanel,</p>
+              <p class="ml-2">ConsequenceScene, TrustWarningModal</p>
+            </div>
+          </details>
+        </SectionReveal>
+      </div>
+    </section>
+
+    <!-- Section 6: Real-World Grounding -->
+    <section class="py-16 sm:py-20 bg-surface-overlay">
+      <div class="max-w-5xl mx-auto px-4 sm:px-6">
+        <SectionReveal client:visible>
+          <h2 class="font-serif text-2xl sm:text-3xl text-text-primary mb-6">Real-World Grounding</h2>
+          <p class="text-text-secondary leading-relaxed mb-6 max-w-3xl">
+            Every feedback panel includes a real-world context section connecting the scenario to actual cybersecurity incidents. This grounds the training in reality and gives learners specific examples they can reference. Some of the incidents and frameworks woven into the content:
+          </p>
+          <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 max-w-3xl">
+            <ul class="space-y-2 text-sm text-text-secondary">
+              <li class="flex items-start gap-2">
+                <span class="text-accent mt-0.5 shrink-0">&#10003;</span>
+                <span>2022 Uber breach (MFA social engineering)</span>
+              </li>
+              <li class="flex items-start gap-2">
+                <span class="text-accent mt-0.5 shrink-0">&#10003;</span>
+                <span>2023 MGM Resorts social engineering attack</span>
+              </li>
+              <li class="flex items-start gap-2">
+                <span class="text-accent mt-0.5 shrink-0">&#10003;</span>
+                <span>2013 Target breach (ignored alerts)</span>
+              </li>
+              <li class="flex items-start gap-2">
+                <span class="text-accent mt-0.5 shrink-0">&#10003;</span>
+                <span>FBI BEC statistics ($2.9B in losses)</span>
+              </li>
+              <li class="flex items-start gap-2">
+                <span class="text-accent mt-0.5 shrink-0">&#10003;</span>
+                <span>2020 SolarWinds supply chain attack</span>
+              </li>
+            </ul>
+            <ul class="space-y-2 text-sm text-text-secondary">
+              <li class="flex items-start gap-2">
+                <span class="text-accent mt-0.5 shrink-0">&#10003;</span>
+                <span>2024 Change Healthcare ransomware</span>
+              </li>
+              <li class="flex items-start gap-2">
+                <span class="text-accent mt-0.5 shrink-0">&#10003;</span>
+                <span>2025 Verizon Data Breach Report</span>
+              </li>
+              <li class="flex items-start gap-2">
+                <span class="text-accent mt-0.5 shrink-0">&#10003;</span>
+                <span>NIST SP 800-61 Incident Response framework</span>
+              </li>
+              <li class="flex items-start gap-2">
+                <span class="text-accent mt-0.5 shrink-0">&#10003;</span>
+                <span>IBM Cost of a Data Breach report</span>
+              </li>
+              <li class="flex items-start gap-2">
+                <span class="text-accent mt-0.5 shrink-0">&#10003;</span>
+                <span>Equifax $700M settlement</span>
+              </li>
+            </ul>
+          </div>
+        </SectionReveal>
+      </div>
+    </section>
+
+    <!-- Section 7: Tools & Credits -->
+    <section class="py-16 sm:py-20 bg-surface">
+      <div class="max-w-5xl mx-auto px-4 sm:px-6">
+        <SectionReveal client:visible>
+          <h2 class="font-serif text-2xl sm:text-3xl text-text-primary mb-6">Tools & Credits</h2>
+          <div class="overflow-x-auto">
+            <table class="w-full max-w-2xl text-sm">
+              <thead>
+                <tr class="border-b border-border-subtle">
+                  <th class="text-left py-3 pr-6 text-xs font-semibold text-text-secondary uppercase tracking-wide">Tool</th>
+                  <th class="text-left py-3 text-xs font-semibold text-text-secondary uppercase tracking-wide">Use</th>
+                </tr>
+              </thead>
+              <tbody class="text-text-secondary">
+                <tr class="border-b border-border-subtle/50">
+                  <td class="py-3 pr-6 font-medium text-text-primary">React + TypeScript</td>
+                  <td class="py-3">Application framework and type safety</td>
+                </tr>
+                <tr class="border-b border-border-subtle/50">
+                  <td class="py-3 pr-6 font-medium text-text-primary">Vite</td>
+                  <td class="py-3">Build tooling and dev server</td>
+                </tr>
+                <tr class="border-b border-border-subtle/50">
+                  <td class="py-3 pr-6 font-medium text-text-primary">Tailwind CSS</td>
+                  <td class="py-3">Styling and design system</td>
+                </tr>
+                <tr class="border-b border-border-subtle/50">
+                  <td class="py-3 pr-6 font-medium text-text-primary">Framer Motion</td>
+                  <td class="py-3">Animations, transitions, and micro-interactions</td>
+                </tr>
+                <tr class="border-b border-border-subtle/50">
+                  <td class="py-3 pr-6 font-medium text-text-primary">Zustand</td>
+                  <td class="py-3">State management with localStorage persistence</td>
+                </tr>
+                <tr class="border-b border-border-subtle/50">
+                  <td class="py-3 pr-6 font-medium text-text-primary">Claude (Anthropic)</td>
+                  <td class="py-3">Development support, scenario writing, architecture planning</td>
+                </tr>
+                <tr>
+                  <td class="py-3 pr-6 font-medium text-text-primary">GitHub Pages</td>
+                  <td class="py-3">Hosting and deployment</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </SectionReveal>
+      </div>
+    </section>
+
+    <!-- Section 8: What I'd Do Differently -->
+    <section class="py-16 sm:py-20 bg-surface-overlay">
+      <div class="max-w-5xl mx-auto px-4 sm:px-6">
+        <SectionReveal client:visible>
+          <h2 class="font-serif text-2xl sm:text-3xl text-text-primary mb-6">What I'd Do Differently</h2>
+          <div class="space-y-4 max-w-3xl">
+            <div class="border-l-2 border-accent-gold pl-4">
+              <p class="font-semibold text-text-primary mb-1">Multiplayer or team mode</p>
+              <p class="text-text-secondary leading-relaxed">The current build is single-player. A team mode where groups discuss choices before committing would add a collaborative learning dimension and better mirror how real security decisions often involve multiple people.</p>
+            </div>
+            <div class="border-l-2 border-accent-gold pl-4">
+              <p class="font-semibold text-text-primary mb-1">Analytics dashboard</p>
+              <p class="text-text-secondary leading-relaxed">With a lightweight backend, the app could track aggregate choice patterns across all learners. This would surface which threats are most commonly misidentified and inform targeted follow-up training.</p>
+            </div>
+            <div class="border-l-2 border-accent-gold pl-4">
+              <p class="font-semibold text-text-primary mb-1">More complex branching trees</p>
+              <p class="text-text-secondary leading-relaxed">The current branch structure is one level deep: a bad choice triggers a consequence branch, then returns to the main path. Deeper branching where early decisions fundamentally change what scenarios appear later would increase replayability and reinforce that security decisions compound over time.</p>
+            </div>
+          </div>
+        </SectionReveal>
+      </div>
+    </section>
+
+    <!-- CTA -->
+    <section class="py-16 sm:py-20 bg-surface">
+      <div class="max-w-5xl mx-auto px-4 sm:px-6 text-center">
+        <SectionReveal client:visible>
+          <h2 class="font-serif text-2xl sm:text-3xl text-text-primary mb-4">Try It Yourself</h2>
+          <p class="text-text-secondary mb-8 max-w-xl mx-auto">Navigate your first week at NovaTech Industries. Can you spot the phishing emails, resist the social engineering, and make it to Friday with your security score intact?</p>
+          <a
+            href="/cyberwise/dist/index.html"
+            target="_blank"
+            rel="noopener noreferrer"
+            class="inline-flex items-center gap-2 px-8 py-4 bg-accent hover:bg-accent-hover text-white font-semibold rounded-lg transition-colors text-lg"
+          >
+            Play CyberWise
+            <svg class="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
+            </svg>
+          </a>
+        </SectionReveal>
+      </div>
+    </section>
+  </main>
+
+  <CaseStudyFooter />
+</BaseLayout>

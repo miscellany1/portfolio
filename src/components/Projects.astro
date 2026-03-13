@@ -3,7 +3,7 @@ import ProjectCard from "./ProjectCard.tsx";
 import SectionReveal from "./SectionReveal.tsx";
 import { projects } from "../data/projects";
 
-const featured = projects.find((p) => p.featured);
+const featured = projects.filter((p) => p.featured);
 const rest = projects.filter((p) => !p.featured);
 ---
 
@@ -17,14 +17,16 @@ const rest = projects.filter((p) => !p.featured);
         Interactive prototypes that demonstrate instructional design in action.
       </p>
     </SectionReveal>
-    {featured && (
-      <div class="mb-6">
-        <ProjectCard client:visible project={featured} index={0} featured />
+    {featured.length > 0 && (
+      <div class="grid gap-6 mb-6">
+        {featured.map((project, i) => (
+          <ProjectCard client:visible project={project} index={i} featured />
+        ))}
       </div>
     )}
-    <div class="grid gap-6 sm:grid-cols-2">
+    <div class="grid gap-6 sm:grid-cols-3">
       {rest.map((project, i) => (
-        <ProjectCard client:visible project={project} index={i + 1} />
+        <ProjectCard client:visible project={project} index={i + featured.length} />
       ))}
     </div>
   </div>

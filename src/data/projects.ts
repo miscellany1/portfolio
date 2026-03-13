@@ -6,6 +6,7 @@ export interface Project {
   tech: string[];
   demoUrl: string;
   linkLabel?: string;
+  caseStudyUrl?: string;
   featured?: boolean;
 }
 
@@ -24,6 +25,7 @@ export const projects: Project[] = [
     tech: ["Articulate Storyline", "HTML", "CSS", "JavaScript"],
     demoUrl: "/the-conversation/TheConversation/story.html",
     linkLabel: "Play Scenario",
+    caseStudyUrl: "/the-conversation",
     featured: true,
   },
   {
@@ -39,6 +41,9 @@ export const projects: Project[] = [
     ],
     tech: ["React", "TypeScript", "Tailwind CSS", "Framer Motion"],
     demoUrl: "/cyberwise/dist/index.html",
+    linkLabel: "Play Scenario",
+    caseStudyUrl: "/cyberwise-process",
+    featured: true,
   },
   {
     title: "MindMaze",
